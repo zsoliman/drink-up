@@ -1,4 +1,4 @@
-const SearchInfo = ({ ingredients, setSearchTerm, searchTerm }) => {
+const SearchInfo = ({ ingredients, setSearchTerm }) => {
 
 
     const handleSearch = (e) => {

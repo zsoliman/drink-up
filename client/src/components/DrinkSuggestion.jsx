@@ -8,7 +8,10 @@ const DrinkSuggestion = ({ randomDrinks }) => {
                 randomDrinks.map((drink) => {
 
                     return (
-                        <DrinkCard key={drink.idDrink} drink={drink} />
+                        <DrinkCard
+                            key={drink.idDrink}
+                            drink={drink}
+                        />
                     )
                 })
             }

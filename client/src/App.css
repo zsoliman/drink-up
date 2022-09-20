@@ -15,6 +15,7 @@
 
 .drink-img {
   height: 50vw;
+  max-height: 75vh;
   margin-left: 2em;
 }
 

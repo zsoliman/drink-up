@@ -1,6 +1,42 @@
-const Search = () => {
+import DrinkCard from "./components/DrinkCard"
+
+const Search = ({ setSearchTerm, drinks }) => {
+
+    const handleSearch = (e) => {
+        e.preventDefault()
+        setSearchTerm(e.target.value)
+    }
+
+    console.log('sDrinks', drinks)
+
     return (
-        <div>Search page</div>
+        <div>
+            <form
+                onChange={handleSearch}
+            >
+                <input
+                    className="search-bar"
+                    type="text"
+                    placeholder="Search by keyword..."
+                />
+
+            </form>
+
+            <div>
+                {
+                    drinks.map((drink) => {
+
+                        return (
+                            <DrinkCard
+                                key={drink.idDrink}
+                                drink={drink}
+                            />
+                        )
+                    })
+                }
+
+            </div>
+        </div >
     )
 }
 
