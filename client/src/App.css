@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.drink-card {
+  border: solid 2px black;
+  display: flex;
+  height: 85vw;
+  width: auto;
+  padding: 2em;
+}
+
+.drink-img {
+  height: 50vw;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+
+}
