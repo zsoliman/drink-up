@@ -5,18 +5,28 @@
 
 .drink-card {
   border: solid 2px black;
+  border-radius: 10px;
   display: flex;
-  height: 85vw;
+  height: 75vh;
   width: auto;
   padding: 2em;
+  margin: 2em;
 }
 
 .drink-img {
   height: 50vw;
+  margin-left: 2em;
+}
+
+.logo {
+  height: 5em;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  border-bottom: solid black 1px;
 
 }

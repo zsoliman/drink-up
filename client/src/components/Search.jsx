@@ -1,13 +1,12 @@
-import { useState } from "react";
+const Search = ({ drinks, setSearchTerm, searchTerm }) => {
 
-const Search = ({ drinks }) => {
-
-    const [searchTerm, setSearchTerm] = useState('')
 
     const handleSearch = (e) => {
         e.preventDefault()
         setSearchTerm(e.target.value)
     }
+
+    console.log(searchTerm)
 
 
     return (

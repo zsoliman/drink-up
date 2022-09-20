@@ -1,11 +1,11 @@
 import DrinkCard from "./DrinkCard";
 
-const Drinks = ({ drinks }) => {
+const Drinks = ({ randomDrinks }) => {
 
     return (
         <div>
             {
-                drinks.map((drink) => {
+                randomDrinks.map((drink) => {
 
                     return (
                         <DrinkCard key={drink.idDrink} drink={drink} />

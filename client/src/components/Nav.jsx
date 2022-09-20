@@ -4,11 +4,9 @@ const Nav = () => {
     return (
         <div className="nav">
             <h3>Favorites</h3>
-
-            <Link to='/'>
-                <h2>LOGO</h2>
-            </Link>
-
+            <h3 className="logo">Drink<Link to='/'>
+                <img className="logo" src="https://img.icons8.com/pastel-glyph/344/cocktail--v2.png" />
+            </Link>Up!</h3>
             <h3>Log In</h3>
         </div>
     )

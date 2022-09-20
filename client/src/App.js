@@ -8,7 +8,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [drinks, setDrinks] = useState([])
+  const [randomDrinks, setRandomDrinks] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+
 
   // 'options' provided by api
   const options = {
@@ -22,7 +24,7 @@ function App() {
   const getDrinks = async () => {
     let req = await fetch(`https://the-cocktail-db.p.rapidapi.com/random.php`, options)
     let res = await req.json()
-    setDrinks(res.drinks)
+    setRandomDrinks(res.drinks)
   }
 
   // console.log('drinks:', drinks)
@@ -40,8 +42,12 @@ function App() {
 
         <Routes>
           <Route exact path='/' element={<Home />} ></Route>
-          <Route path='/drinks' element={<Drinks drinks={drinks} />} ></Route>
-          <Route path='/search' element={<Search drinks={drinks} />} ></Route>
+          <Route path='/drinks' element={<Drinks randomDrinks={randomDrinks} />} ></Route>
+          <Route path='/search' element={<Search
+            // drinks={drinks}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />} ></Route>
 
         </Routes>
       </BrowserRouter>
