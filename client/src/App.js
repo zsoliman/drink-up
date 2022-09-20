@@ -3,6 +3,7 @@ import Home from './components/Home';
 import DrinkSuggestion from './components/DrinkSuggestion';
 import SearchInfo from './components/SearchInfo';
 import Nav from './components/Nav';
+import Search from './Search';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -49,12 +50,16 @@ function App() {
 
         <Routes>
           <Route exact path='/' element={<Home />} ></Route>
+
           <Route path='/drinks' element={<DrinkSuggestion randomDrinks={randomDrinks} />} ></Route>
+
           <Route path='/searchinfo' element={<SearchInfo
             ingredients={ingredients}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
           />} ></Route>
+
+          <Route path='/search' element={<Search />}></Route>
 
         </Routes>
       </BrowserRouter>

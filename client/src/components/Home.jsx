@@ -13,7 +13,9 @@ const Home = () => {
                     <button>Curious about your alcohol of choice? <br /> Read about it</button>
                 </Link>
 
-                <button>Thirsty but Picky? <br /> Search by Ingredient</button>
+                <Link to='/search'>
+                    <button>Thirsty but Picky? <br /> Search by Ingredient</button>
+                </Link>
             </div>
         </div>
     )
