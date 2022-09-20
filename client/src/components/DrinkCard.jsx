@@ -22,6 +22,7 @@ const DrinkCard = ({ drink }) => {
                 <p>Instructions: {drink.strInstructions}</p>
                 <p>Tags: {drink.strTags}</p>
             </div>
+
             <img src={drink.strDrinkThumb} alt='A nice drink' className="drink-img" />
 
         </div>

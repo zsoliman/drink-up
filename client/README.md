@@ -7,24 +7,27 @@ get suggested cocktails based on ingredient search queries
 ## base_url: https://the-cocktail-db.p.rapidapi.com/
 
 ## Get Request Endings:
-# search.php?s=${name}
+
+search.php?s=${name}
 - search by cocktail name
 - search by ingredient name
-# filter.php?i=${name}
+
+filter.php?i=${name}
 - search by ingredient
 
-# filter.php?i=${ingredient1}%2C${ingredient2}%2C${ingredient3}
+filter.php?i=${ingredient1}%2C${ingredient2}%2C${ingredient3}
 - search by multiple ingredients
-# random.php
+
+random.php
 - lookup a random cocktail
 
-# lookup.php?i=${cocktailID}
+lookup.php?i=${cocktailID}
 - lookup by cocktail ID
 
-# lookup.php?iid=${ingredientID}
+lookup.php?iid=${ingredientID}
 - lookup by ingredient ID
 
-# list.php?c=list
+list.php?c=list
 - list categories
 
 # To Do:
