@@ -6,15 +6,15 @@ const Home = () => {
             <h1>Drink Up</h1>
             <div>
                 <Link to='/drinks'>
-                    <button>Thirsty? <br /> Get A Suggestion</button>
+                    <button className="btn">Thirsty? <br /> Get A Suggestion</button>
                 </Link>
 
                 <Link to='/searchinfo'>
-                    <button>Curious about your alcohol of choice? <br /> Read about it</button>
+                    <button className="btn">Curious about your alcohol of choice? <br /> Read about it</button>
                 </Link>
 
                 <Link to='/search'>
-                    <button>Thirsty but Picky? <br /> Search by Ingredient</button>
+                    <button className="btn">Thirsty but Picky? <br /> Search by Ingredient</button>
                 </Link>
             </div>
         </div>
