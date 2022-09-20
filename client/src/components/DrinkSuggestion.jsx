@@ -1,6 +1,6 @@
 import DrinkCard from "./DrinkCard";
 
-const Drinks = ({ randomDrinks }) => {
+const DrinkSuggestion = ({ randomDrinks }) => {
 
     return (
         <div>
@@ -17,4 +17,4 @@ const Drinks = ({ randomDrinks }) => {
     )
 }
 
-export default Drinks;
+export default DrinkSuggestion;

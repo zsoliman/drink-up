@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './components/Home';
-import Drinks from './components/Drinks';
+import DrinkSuggestion from './components/DrinkSuggestion';
 import Search from './components/Search';
 import Nav from './components/Nav';
 import { useState, useEffect } from 'react';
@@ -37,12 +37,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
 
-        {/* Nav needs to be inside BrowserRouter but outside Routes */}
+        {/* Nav needs to be inside BrowserRouter but outside Routes because...*/}
         <Nav />
 
         <Routes>
           <Route exact path='/' element={<Home />} ></Route>
-          <Route path='/drinks' element={<Drinks randomDrinks={randomDrinks} />} ></Route>
+          <Route path='/drinks' element={<DrinkSuggestion randomDrinks={randomDrinks} />} ></Route>
           <Route path='/search' element={<Search
             // drinks={drinks}
             searchTerm={searchTerm}
