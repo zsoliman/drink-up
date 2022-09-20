@@ -9,9 +9,11 @@ const Home = () => {
                     <button>Thirsty? <br /> Get A Suggestion</button>
                 </Link>
 
-                <Link to='/search'>
-                    <button>Thirsty but Picky? <br /> Search by Ingredient</button>
+                <Link to='/searchinfo'>
+                    <button>Curious about your alcohol of choice? <br /> Read about it</button>
                 </Link>
+
+                <button>Thirsty but Picky? <br /> Search by Ingredient</button>
             </div>
         </div>
     )

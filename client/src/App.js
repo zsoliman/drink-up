@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './components/Home';
 import DrinkSuggestion from './components/DrinkSuggestion';
-import Search from './components/Search';
+import SearchInfo from './components/SearchInfo';
 import Nav from './components/Nav';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -10,6 +10,7 @@ function App() {
 
   const [randomDrinks, setRandomDrinks] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
+  const [ingredients, setIngredients] = useState('')
 
 
   // 'options' provided by api
@@ -21,17 +22,23 @@ function App() {
     }
   };
 
-  const getDrinks = async () => {
-    let req = await fetch(`https://the-cocktail-db.p.rapidapi.com/random.php`, options)
+  const getRandomDrinks = async () => {
+    let req = await fetch('https://the-cocktail-db.p.rapidapi.com/random.php', options)
     let res = await req.json()
     setRandomDrinks(res.drinks)
   }
 
-  // console.log('drinks:', drinks)
+  const searchIngredients = async () => {
+    let req = await fetch(`https://the-cocktail-db.p.rapidapi.com/search.php?i=${searchTerm}`, options)
+    let res = await req.json()
+    setIngredients(res)
+  }
+
 
   useEffect(() => {
-    getDrinks()
-  }, [])
+    getRandomDrinks();
+    searchIngredients();
+  }, [searchTerm])
 
   return (
     <div className="App">
@@ -43,8 +50,8 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} ></Route>
           <Route path='/drinks' element={<DrinkSuggestion randomDrinks={randomDrinks} />} ></Route>
-          <Route path='/search' element={<Search
-            // drinks={drinks}
+          <Route path='/searchinfo' element={<SearchInfo
+            ingredients={ingredients}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
           />} ></Route>

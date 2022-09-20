@@ -18,6 +18,12 @@
   margin-left: 2em;
 }
 
+.info-sesh {
+  padding: 0 10em;
+  letter-spacing: 1.5px;
+  line-height: 30px;
+}
+
 .logo {
   height: 5em;
   font-family: 'Kaushan Script', cursive;
@@ -28,5 +34,28 @@
   justify-content: space-around;
   align-items: center;
   border-bottom: solid black 1px;
+}
 
+.search-bar {
+  margin: 1em;
+  width: 40em;
+  height: 3em;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  align-items: center;
+  background-color: #ebebeb;
+  border: none;
+  text-align: center;
+}
+
+.submit {
+  height: 3em;
+  width: 6em;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  border: none;
+  cursor: pointer;
+  background-color: #ebebeb;
 }

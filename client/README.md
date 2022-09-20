@@ -10,6 +10,8 @@ get suggested cocktails based on ingredient search queries
 
 search.php?s=${name}
 - search by cocktail name
+
+search.php?i=${name}
 - search by ingredient name
 
 filter.php?i=${name}
