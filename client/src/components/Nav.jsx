@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <div className="nav">
             <Link className="link" to='favorites'>
-                <h3>Favorites</h3>
+                <h3 style={{ margin: '0' }}>Favorites</h3>
             </Link>
 
             <h3 className="logo">Drink<Link to='/'>
@@ -13,9 +13,8 @@ const Nav = () => {
 
             <h3>
                 <Link className="link" to='login'>
-                    Log In <br /><br />
-                </Link>
-                <Link className="link" to='register'>
+                    Log In
+                </Link> / <Link className="link" to='register'>
                     Sign Up
                 </Link>
             </h3>
