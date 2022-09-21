@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const [randomDrinks, setRandomDrinks] = useState([])
+  const [suggestedDrinks, setSuggestedDrinks] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [ingredients, setIngredients] = useState('')
   const [drinks, setDrinks] = useState('')
@@ -24,10 +24,10 @@ function App() {
     }
   };
 
-  const getRandomDrinks = async () => {
+  const getSuggestedDrinks = async () => {
     let req = await fetch('https://the-cocktail-db.p.rapidapi.com/random.php', options)
     let res = await req.json()
-    setRandomDrinks(res.drinks)
+    setSuggestedDrinks(res.drinks)
   }
 
   // searches ingredients for SearchInfo.jsx
@@ -54,7 +54,7 @@ function App() {
 
 
   useEffect(() => {
-    getRandomDrinks();
+    getSuggestedDrinks();
     searchIngredients();
     searchDrinks();
   }, [searchTerm])
@@ -72,7 +72,7 @@ function App() {
 
           <Route path='/drinks'
             element={<DrinkSuggestion
-              randomDrinks={randomDrinks} />} ></Route>
+              suggestedDrinks={suggestedDrinks} />} ></Route>
 
           <Route path='/searchinfo'
             element={<SearchInfo

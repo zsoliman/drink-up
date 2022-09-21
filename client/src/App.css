@@ -38,6 +38,11 @@
   line-height: 30px;
 }
 
+.link {
+  text-decoration: none;
+  color: black;
+}
+
 .logo {
   height: 5em;
   font-family: 'Kaushan Script', cursive;

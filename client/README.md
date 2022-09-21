@@ -33,7 +33,9 @@ list.php?c=list
 - list categories
 
 # To Do:
-- Home screen
-- Search Function
+- back end
+- set up favorites
+- set up log in/log out/auth
+- combine popular and random in the suggestions page
 - make tags clickable 
 - probably cancel the food api payment# drink-up-rails
