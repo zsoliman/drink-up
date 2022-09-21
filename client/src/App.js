@@ -3,7 +3,7 @@ import Home from './components/Home';
 import DrinkSuggestion from './components/DrinkSuggestion';
 import SearchInfo from './components/SearchInfo';
 import Nav from './components/Nav';
-import Search from './Search';
+import Search from './components/Search';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 

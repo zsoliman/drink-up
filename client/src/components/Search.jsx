@@ -1,4 +1,4 @@
-import DrinkCard from "./components/DrinkCard"
+import DrinkCard from "./DrinkCard"
 
 const Search = ({ setSearchTerm, drinks }) => {
 
