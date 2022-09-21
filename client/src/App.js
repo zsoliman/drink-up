@@ -5,6 +5,7 @@ import SearchInfo from './components/SearchInfo';
 import Nav from './components/Nav';
 import Search from './components/Search';
 import Favorites from './components/Favorites';
+import Register from './components/Register';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -91,6 +92,9 @@ function App() {
 
           <Route path='/favorites'
             element={<Favorites />} ></Route>
+
+          <Route path='/register'
+            element={<Register />} ></Route>
 
         </Routes>
       </BrowserRouter>
