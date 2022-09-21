@@ -7,7 +7,7 @@ const Search = ({ setSearchTerm, drinks }) => {
         setSearchTerm(e.target.value)
     }
 
-    console.log('sDrinks', drinks)
+    // console.log('sDrinks', drinks)
 
     return (
         <div>

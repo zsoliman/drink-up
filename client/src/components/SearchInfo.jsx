@@ -7,7 +7,7 @@ const SearchInfo = ({ ingredients, setSearchTerm }) => {
     }
 
     // console.log('searchTerm:', searchTerm)
-    // console.log('ingredients:', ingredients.ingredients)
+    console.log('ingredients:', ingredients)
 
 
     return (
@@ -23,10 +23,14 @@ const SearchInfo = ({ ingredients, setSearchTerm }) => {
 
             <div className="info-sesh">
 
-                <h2>{ingredients?.ingredients[0]?.strIngredient}</h2>
-                <h4>Approximate ABV: {ingredients?.ingredients[0]?.strABV}</h4>
-                {ingredients?.ingredients[0]?.strDescription}
+                <h2>{ingredients[0].strIngredient}</h2>
+
+                <h4>Approximate ABV: {ingredients[0].strABV}</h4>
+
+                {ingredients[0].strDescription}
             </div>
+
+
 
 
 

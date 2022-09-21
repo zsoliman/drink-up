@@ -30,19 +30,28 @@ function App() {
     setRandomDrinks(res.drinks)
   }
 
+  // searches ingredients for SearchInfo.jsx
   const searchIngredients = async () => {
     let req = await fetch(`https://the-cocktail-db.p.rapidapi.com/search.php?i=${searchTerm}`, options)
     let res = await req.json()
-    setIngredients(res)
+    // if statement stops the error when search is invalid
+    if (res.ingredients !== null) {
+      setIngredients(res.ingredients)
+    }
+
   }
 
+  // searches drink recipes for Search.jsx
   const searchDrinks = async () => {
     let req = await fetch(`https://the-cocktail-db.p.rapidapi.com/search.php?s=${searchTerm}`, options)
     let res = await req.json()
-    setDrinks(res.drinks)
+    // if statement stops the error when search is invalid
+    if (res.drinks !== null) {
+      setDrinks(res.drinks)
+    }
   }
 
-  // console.log('drinks', drinks.drinks)
+
 
   useEffect(() => {
     getRandomDrinks();
@@ -50,11 +59,11 @@ function App() {
     searchDrinks();
   }, [searchTerm])
 
+  // Nav needs to be inside BrowserRouter but outside Routes because...
   return (
     <div className="App">
       <BrowserRouter>
 
-        {/* Nav needs to be inside BrowserRouter but outside Routes because...*/}
         <Nav />
 
         <Routes>
