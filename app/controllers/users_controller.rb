@@ -10,6 +10,11 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def favorites 
+        user = User.find_by(id: params[:id])
+        favorites = 
+    end
+
     def create
         user = User.create(user_name: params[:user_name], password_digest: params[password_digest], email: params[:email])
         render json: user
