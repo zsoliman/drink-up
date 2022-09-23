@@ -33,6 +33,11 @@
   margin-left: 2em;
 }
 
+.fav {
+  background-color: red;
+  color: #ebebeb;
+}
+
 .info-sesh {
   padding: 0 10em;
   letter-spacing: 1.5px;

@@ -1,4 +1,21 @@
+import { useState } from "react";
+
 const DrinkCard = ({ drink }) => {
+
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    const addToFavorites = async () => {
+        let options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({})
+        }
+        let req = await fetch('http://localhost:3000/recipes/new')
+    }
+
+    const handleClick = () => {
+        setIsFavorite(current => !current);
+    }
 
     return (
         <div className="drink-card">
@@ -21,6 +38,7 @@ const DrinkCard = ({ drink }) => {
                 <p>{drink.strMeasure15} {drink.strIngredient15}</p>
                 <p>Instructions: {drink.strInstructions}</p>
                 <p>Tags: {drink.strTags}</p>
+                <button className={isFavorite ? 'fav' : ''} onClick={handleClick}>fav</button>
             </div>
 
             <img src={drink.strDrinkThumb} alt='A nice drink' className="drink-img" />

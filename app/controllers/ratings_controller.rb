@@ -11,7 +11,15 @@ class RatingsController < ApplicationController
     end
 
     def create
-        rating = Rating.create(rating: params[:rating], favorite: params[:favorite], )
+        rating = Rating.create(
+            rating: params[:rating], 
+            favorite: params[:favorite], 
+            comment: params[:comment],
+            user_image: params[:user_image],
+            user_id: params[:user_id],
+            recipe_id: params[:recipe_id]
+            )
+        render json: rating
     end
 
 end

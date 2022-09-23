@@ -5,6 +5,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'rest-client', '~> 1.8'
 
+gem 'active_model_serializers', '~> 0.10.2'
+
 ruby "2.7.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
