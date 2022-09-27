@@ -8,7 +8,11 @@ class UsersController < ApplicationController
     def show
         user = User.find_by(id: params[:id])
         render json: user
-        # .as_json(include: [:favorites])
+    end
+
+    def show_favorites
+        rating = User.find_by(id: params[:id]).ratings.find_by(favorite: true)
+        render json: rating
     end
 
     def create

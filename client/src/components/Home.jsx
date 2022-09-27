@@ -10,7 +10,7 @@ const Home = () => {
                 </Link>
 
                 <Link to='/search'>
-                    <button className="btn">Thirsty but Picky? <br /> Search by Ingredient</button>
+                    <button className="btn">Thirsty but Picky? <br /> Search any drink!</button>
                 </Link>
 
                 <Link to='/searchinfo'>
