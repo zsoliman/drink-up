@@ -2,6 +2,8 @@ import { useState } from "react";
 
 const DrinkCard = ({ drink }) => {
 
+
+
     const [isFavorite, setIsFavorite] = useState(false);
 
     const addToFavorites = async () => {
@@ -41,7 +43,7 @@ const DrinkCard = ({ drink }) => {
                 <button className={isFavorite ? 'fav' : ''} onClick={handleClick}>fav</button>
             </div>
 
-            <img src={drink.strDrinkThumb} alt='A nice drink' className="drink-img" />
+            <img src={drink.strDrinkThumb} alt='A nice drink with no image' className="drink-img" />
 
         </div>
 

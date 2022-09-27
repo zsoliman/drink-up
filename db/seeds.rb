@@ -67,7 +67,14 @@ recipe1= Recipe.create(strDrink: "New Drink",
     strIngredient1: "Liquid",
     strMeasure1: "A Lot")
 
+recipe2= Recipe.create(strDrink: "New Drink",
+    strIngredient1: "Liquid",
+    strMeasure1: "A Lot")
+
 
 rating1 = Rating.create(rating: 4, favorite: true, comment: 'good', user_id: user1.id, recipe_id: recipe1.id)
+
+favorite1 = Favorite.create(user_id: 1, recipe_id: 1)
+favorite2 = Favorite.create(user_id: 1, recipe_id: 2)
 
 puts 'done seeding'
