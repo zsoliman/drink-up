@@ -19,6 +19,8 @@ const DrinkCard = ({ drink }) => {
         setIsFavorite(current => !current);
     }
 
+    // console.log(drink)
+
     return (
         <div className="drink-card">
             <div>

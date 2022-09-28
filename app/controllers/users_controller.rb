@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     end
 
     def show_favorites
-        rating = User.find_by(id: params[:id]).ratings.find_by(favorite: true)
-        render json: rating.to_json(include: [:recipe])
+        favorites = User.find_by(id: params[:id]).favorites
+        render json: favorites
 
         # User.find_by(id: params[:id]).as_json(methods: [:ratings])
     end

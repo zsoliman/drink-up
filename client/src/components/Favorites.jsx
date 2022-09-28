@@ -12,7 +12,7 @@ const Favorites = () => {
     const getFavorites = async () => {
         let req = await fetch(`http://localhost:3000/users/${user_id}/favorites`)
         let res = await req.json()
-        console.log(res)
+        // console.log('res', res)
         setFavoritesList(res)
     }
 
@@ -21,7 +21,7 @@ const Favorites = () => {
         getFavorites()
     }, [])
 
-    console.log('fav list', favoritesList.recipe)
+    console.log('fav list', favoritesList)
     return (
         <div>
             <h2>Favorites Page</h2>
@@ -29,7 +29,7 @@ const Favorites = () => {
             {
                 favoritesList.map((drink) => {
                     return (
-                        <DrinkCard drink={drink} />
+                        <DrinkCard key={drink.id} drink={drink} />
                     )
                 })
             }
