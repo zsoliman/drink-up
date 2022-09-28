@@ -19,7 +19,7 @@ const DrinkCard = ({ drink }) => {
         setIsFavorite(current => !current);
     }
 
-    // console.log(drink)
+    console.log(drink)
 
     return (
         <div className="drink-card">

@@ -21,7 +21,7 @@ const Favorites = () => {
         getFavorites()
     }, [])
 
-    console.log('fav list', favoritesList)
+    // console.log('fav list', favoritesList)
     return (
         <div>
             <h2>Favorites Page</h2>
@@ -29,7 +29,7 @@ const Favorites = () => {
             {
                 favoritesList.map((drink) => {
                     return (
-                        <DrinkCard key={drink.id} drink={drink} />
+                        <DrinkCard key={drink.id} drink={drink.recipe} />
                     )
                 })
             }
