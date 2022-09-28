@@ -11,6 +11,8 @@ Rails.application.routes.draw do
  get '/recipes/:id', to: 'recipes#show'
 
  post '/users', to: 'users#create'
+ post '/login', to: 'sessions#create'
+ 
  post '/recipes', to: 'recipes#create'
  post '/ratings', to: 'ratings#create'
 end

@@ -60,7 +60,7 @@ Rating.destroy_all
 puts 'seeding...'
 
 user1 = User.create(user_name: "Zachary",
-    password_digest: "password",
+    password: "password",
     email: "email@gmail.com")
 
 recipe1= Recipe.create(strDrink: "New Drink",
