@@ -8,6 +8,7 @@ import Favorites from './components/Favorites';
 import Register from './components/Register';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [ingredients, setIngredients] = useState('')
   const [drinks, setDrinks] = useState('')
+  const [currentUser, setCurrentUser] = useState({})
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
   // 'options' provided by api
@@ -53,6 +56,13 @@ function App() {
     }
   }
 
+  // this fetches the user from the cookies if the page refreshes, so that the user stays logged in
+  const fetchSession = async () => {
+    let req = await fetch('/me')
+    let res = await req.json()
+    setCurrentUser(res)
+  }
+
 
 
   useEffect(() => {
@@ -88,6 +98,14 @@ function App() {
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
               drinks={drinks}
+            />} ></Route>
+
+          <Route path='/login'
+            element={<Login
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+              setIsLoggedIn={setIsLoggedIn}
+              isLoggedIn={isLoggedIn}
             />} ></Route>
 
           <Route path='/favorites'

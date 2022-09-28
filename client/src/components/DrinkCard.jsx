@@ -10,9 +10,9 @@ const DrinkCard = ({ drink }) => {
         let options = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({})
+            body: JSON.stringify({ strDrink: drink.strDrink })
         }
-        let req = await fetch('http://localhost:3000/recipes/new')
+        let req = await fetch('http://localhost:3000/recipes')
     }
 
     const handleClick = () => {

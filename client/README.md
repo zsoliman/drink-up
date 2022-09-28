@@ -35,6 +35,8 @@ list.php?c=list
 # To Do:
 - back end
 - set up favorites
+- log in
+- sessions
 - set up log in/log out/auth
 - combine popular and random in the suggestions page
 - make tags clickable 
