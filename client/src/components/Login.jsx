@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
 
@@ -10,9 +10,9 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
     const [leaving, setLeaving] = useState(false)
 
 
-    const handleLogin = (e) => {
+    const handleLoginAsync = async (e) => {
         e.preventDefault()
-        fetch('/login', {
+        let req = await fetch('/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -23,24 +23,50 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
                 password: password
             })
         })
-            .then(res => {
-                if (res.ok) {
-                    res.json()
-                    setLeaving(true)
-                        .then(userData => {
-                            console.log("logged in")
-                            setError('')
-                            setCurrentUser(userData)
-                        })
-                } else {
-                    console.log("failed to log in")
-                    res.json()
-                        .then(({ error }) => setError(error))
+        let res = await req.json()
+        if (req.ok) {
+            setLeaving(true)
 
-                }
-            })
+            console.log('logged in bruv')
+            setError('')
+            setCurrentUser(res)
 
+        } else {
+            setError(res.error)
+        }
     }
+    ////////////////////////////////////////////
+    // const handleLogin = (e) => {
+    //     e.preventDefault()
+    //     fetch('/login', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accepts': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             username: username,
+    //             password: password
+    //         })
+    //     })
+    //         .then(res => {
+    //             if (res.ok) {
+    //                 setLeaving(true)
+    //                 res.json()
+    //                     .then(userData => {
+    //                         console.log("logged in")
+    //                         setError('')
+    //                         setCurrentUser(userData)
+    //                     })
+    //             } else {
+    //                 console.log("failed to log in")
+    //                 res.json()
+    //                     .then(({ error }) => setError(error))
+
+    //             }
+    //         })
+
+    // }
 
     const handleChangeUsername = e => setUsername(e.target.value)
     const handleChangePassword = e => setPassword(e.target.value)
@@ -57,7 +83,7 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
 
     return (
         <div>
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleLoginAsync}>
 
                 <p style={{ color: 'red' }}>{error ? error : null}</p>
 

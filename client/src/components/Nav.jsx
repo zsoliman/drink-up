@@ -5,6 +5,7 @@ const Nav = ({ currentUser, setCurrentUser }) => {
     const handleLogout = () => {
         fetch('/logout', { method: 'DELETE' })
         setCurrentUser({})
+        window.location.reload();
     }
 
     return (
