@@ -6,23 +6,17 @@ const Favorites = ({ currentUser }) => {
 
     const [favoritesList, setFavoritesList] = useState([])
 
-    let user_id = 1
-    //until log in is set up, so that the fetch works
-
     const getFavorites = async () => {
         let req = await fetch(`http://localhost:3000/users/${currentUser.id}/favorites`)
         let res = await req.json()
         setFavoritesList(res)
     }
 
-
     useEffect(() => {
         if (currentUser.id) {
             getFavorites()
         }
     }, [])
-
-    console.log(favoritesList)
 
     return (
         <div>
