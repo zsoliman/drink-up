@@ -62,7 +62,7 @@ function App() {
     setCurrentUser(res)
   }
 
-  console.log(currentUser.id)
+  // console.log('cu', currentUser)
 
   useEffect(() => {
     getSuggestedDrinks();
@@ -110,7 +110,9 @@ function App() {
             />} ></Route>
 
           <Route path='/favorites'
-            element={<Favorites />} ></Route>
+            element={<Favorites
+              currentUser={currentUser}
+            />} ></Route>
 
           <Route path='/register'
             element={<Register />} ></Route>

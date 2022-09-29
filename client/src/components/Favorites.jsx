@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import DrinkCard from "./DrinkCard"
 
-const Favorites = () => {
+const Favorites = ({ currentUser }) => {
 
     const [favoritesList, setFavoritesList] = useState([])
 
@@ -10,14 +10,16 @@ const Favorites = () => {
     //until log in is set up, so that the fetch works
 
     const getFavorites = async () => {
-        let req = await fetch(`http://localhost:3000/users/${user_id}/favorites`)
+        let req = await fetch(`http://localhost:3000/users/${currentUser.id}/favorites`)
         let res = await req.json()
         setFavoritesList(res)
     }
 
 
     useEffect(() => {
-        getFavorites()
+        if (currentUser.id) {
+            getFavorites()
+        }
     }, [])
 
     console.log(favoritesList)
