@@ -21,7 +21,7 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 
             <h3>
                 {currentUser ?
-                    <div className="link" onClick={handleLogout}>Log Out</div> :
+                    <div className="link" onClick={handleLogout}>{currentUser.user_name} <br /> Log Out</div> :
                     <><Link className="link" to='login'>
                         Log In
                     </Link> / <Link className="link" to='register'>

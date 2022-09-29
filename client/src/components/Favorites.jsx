@@ -12,7 +12,6 @@ const Favorites = () => {
     const getFavorites = async () => {
         let req = await fetch(`http://localhost:3000/users/${user_id}/favorites`)
         let res = await req.json()
-        // console.log('res', res)
         setFavoritesList(res)
     }
 
@@ -21,7 +20,8 @@ const Favorites = () => {
         getFavorites()
     }, [])
 
-    // console.log('fav list', favoritesList)
+    console.log(favoritesList)
+
     return (
         <div>
             <h2>Favorites Page</h2>

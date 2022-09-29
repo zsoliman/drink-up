@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
-const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
+const Login = ({ setCurrentUser, currentUser }) => {
 
 
     const [username, setUsername] = useState('')
@@ -35,7 +35,10 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
             setError(res.error)
         }
     }
-    ////////////////////////////////////////////
+
+    /////////////////////////////////////////////
+    // .then function changed to async/await function above
+    // 
     // const handleLogin = (e) => {
     //     e.preventDefault()
     //     fetch('/login', {
@@ -67,6 +70,7 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
     //         })
 
     // }
+    ////////////////////////////////////////////////////////
 
     const handleChangeUsername = e => setUsername(e.target.value)
     const handleChangePassword = e => setPassword(e.target.value)

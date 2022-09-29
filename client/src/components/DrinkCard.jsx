@@ -6,20 +6,20 @@ const DrinkCard = ({ drink }) => {
 
     const [isFavorite, setIsFavorite] = useState(false);
 
-    const addToFavorites = async () => {
-        let options = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ strDrink: drink.strDrink })
-        }
-        let req = await fetch('http://localhost:3000/recipes')
-    }
+    // const addToFavorites = async () => {
+    //     let options = {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({ strDrink: drink.strDrink })
+    //     }
+    //     let req = await fetch('http://localhost:3000/recipes')
+    // }
 
     const handleClick = () => {
         setIsFavorite(current => !current);
     }
 
-    console.log(drink)
+    // console.log(drink)
 
     return (
         <div className="drink-card">

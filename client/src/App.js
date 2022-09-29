@@ -18,8 +18,6 @@ function App() {
   const [ingredients, setIngredients] = useState('')
   const [drinks, setDrinks] = useState('')
   const [currentUser, setCurrentUser] = useState({})
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-
 
   // 'options' provided by api
   const options = {
@@ -64,7 +62,7 @@ function App() {
     setCurrentUser(res)
   }
 
-
+  console.log(currentUser.id)
 
   useEffect(() => {
     getSuggestedDrinks();
@@ -109,8 +107,6 @@ function App() {
             element={<Login
               setCurrentUser={setCurrentUser}
               currentUser={currentUser}
-              setIsLoggedIn={setIsLoggedIn}
-              isLoggedIn={isLoggedIn}
             />} ></Route>
 
           <Route path='/favorites'
