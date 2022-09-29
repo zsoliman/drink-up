@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
 
@@ -6,6 +7,8 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState("")
+    const [leaving, setLeaving] = useState(false)
+
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -15,11 +18,15 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
                 'Content-Type': 'application/json',
                 'Accepts': 'application/json'
             },
-            body: JSON.stringify({ username: username, password: password })
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
         })
             .then(res => {
                 if (res.ok) {
                     res.json()
+                    setLeaving(true)
                         .then(userData => {
                             console.log("logged in")
                             setError('')
@@ -29,6 +36,7 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
                     console.log("failed to log in")
                     res.json()
                         .then(({ error }) => setError(error))
+
                 }
             })
 
@@ -37,10 +45,12 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
     const handleChangeUsername = e => setUsername(e.target.value)
     const handleChangePassword = e => setPassword(e.target.value)
 
+    if (leaving) return <Navigate to='/' />
+
     if (currentUser && currentUser.id) {
         return (
             <div>
-                Already logged in!
+                Logged in!
             </div>
         )
     }
@@ -58,7 +68,7 @@ const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
                 />
 
                 <input
-                    type="text" onChange={handleChangePassword} value={password} placeholder='password'
+                    type="password" onChange={handleChangePassword} value={password} placeholder='password'
                 />
 
                 <input
