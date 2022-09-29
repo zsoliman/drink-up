@@ -65,6 +65,7 @@ user1 = User.create(user_name: "Zachary",
 
 recipe1= Recipe.create(strDrink: "New Drink",
     strIngredient1: "Liquid",
+    strDrinkThumb: "https://images.unsplash.com/photo-1571950006418-f226dc106482?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGRyaW5rfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
     strMeasure1: "A Lot")
 
 recipe2= Recipe.create(strDrink: "New Drink",

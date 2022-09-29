@@ -12,6 +12,7 @@ def index
 
     def create
         recipe = Recipe.create!(recipe_params)
+        favorite = Favorite.create!(recipe_id: recipe.id, user_id: params[:user_id])
         render json: recipe
     end
 

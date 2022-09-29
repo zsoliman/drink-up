@@ -1,48 +1,75 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const Login = ({ setCurrentUser, currentUser, setIsLoggedIn, isLoggedIn }) => {
 
 
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState("")
 
-
-    const [formData, setFormData] = useState({
-        user_name: "",
-        password: ""
-    })
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value })
-    }
-    const handleSubmit = async (e) => {
+    const handleLogin = (e) => {
         e.preventDefault()
-        let req = await fetch('/login', {
+        fetch('/login', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            headers: {
+                'Content-Type': 'application/json',
+                'Accepts': 'application/json'
+            },
+            body: JSON.stringify({ username: username, password: password })
         })
-        let res = await req.json()
-        setIsLoggedIn(true)
-        setCurrentUser(res)
-        console.log(res)
+            .then(res => {
+                if (res.ok) {
+                    res.json()
+                        .then(userData => {
+                            console.log("logged in")
+                            setError('')
+                            setCurrentUser(userData)
+                        })
+                } else {
+                    console.log("failed to log in")
+                    res.json()
+                        .then(({ error }) => setError(error))
+                }
+            })
 
+    }
+
+    const handleChangeUsername = e => setUsername(e.target.value)
+    const handleChangePassword = e => setPassword(e.target.value)
+
+    if (currentUser && currentUser.id) {
+        return (
+            <div>
+                Already logged in!
+            </div>
+        )
     }
 
     return (
-        <>
-            <form onSubmit={(e) => handleSubmit(e)} >
-                <label>
-                    Username:
-                    <input onChange={handleChange} type='text' name='user_name' />
-                </label>
-                <label>
-                    Password:
-                    <input onChange={handleChange} type='text' name='password' />
-                </label>
-                <input type='submit' value='Submit' />
-            </form>
+        <div>
+            <form onSubmit={handleLogin}>
 
-            <h1> welcome: {isLoggedIn ? currentUser.user.user_name : "not logged in"} </h1>
-        </>
+                <p style={{ color: 'red' }}>{error ? error : null}</p>
+
+                <p>Login:</p>
+
+                <input
+                    type="text" onChange={handleChangeUsername} value={username} placeholder='username'
+                />
+
+                <input
+                    type="text" onChange={handleChangePassword} value={password} placeholder='password'
+                />
+
+                <input
+                    type="submit" value="Login"
+                />
+
+            </form>
+        </div>
     )
 }
 
 export default Login
+
+

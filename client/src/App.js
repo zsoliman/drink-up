@@ -1,4 +1,7 @@
+import { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+
 import Home from './components/Home';
 import DrinkSuggestion from './components/DrinkSuggestion';
 import SearchInfo from './components/SearchInfo';
@@ -6,8 +9,6 @@ import Nav from './components/Nav';
 import Search from './components/Search';
 import Favorites from './components/Favorites';
 import Register from './components/Register';
-import { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
     getSuggestedDrinks();
     searchIngredients();
     searchDrinks();
+    fetchSession();
   }, [searchTerm])
 
   // Nav needs to be inside BrowserRouter but outside Routes because...
@@ -76,7 +78,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
 
-        <Nav />
+        <Nav
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
 
         <Routes>
           <Route exact path='/'

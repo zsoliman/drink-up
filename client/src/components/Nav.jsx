@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ currentUser, setCurrentUser }) => {
+
+    const handleLogout = () => {
+        fetch('/logout', { method: 'DELETE' })
+        setCurrentUser({})
+    }
+
     return (
         <div className="nav">
             <Link className="link" to='favorites'>
@@ -11,13 +17,17 @@ const Nav = () => {
                 <img className="logo" src="https://img.icons8.com/pastel-glyph/344/cocktail--v2.png" />
             </Link>Up!</h3>
 
+
             <h3>
-                <Link className="link" to='login'>
-                    Log In
-                </Link> / <Link className="link" to='register'>
-                    Sign Up
-                </Link>
+                {currentUser ?
+                    <div onClick={handleLogout}>Log Out</div> :
+                    <><Link className="link" to='login'>
+                        Log In
+                    </Link> / <Link className="link" to='register'>
+                            Sign Up
+                        </Link></>}
             </h3>
+
 
         </div>
     )
