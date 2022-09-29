@@ -15,13 +15,13 @@ const Nav = ({ currentUser, setCurrentUser }) => {
         <div className="nav">
             {currentUser ?
                 <Link className="link" to='favorites'>
-                    <h3>Favorites</h3>
+                    <h3 style={{ margin: '0' }}>Favorites</h3>
                 </Link>
 
                 :
 
                 <Link className="link" to='register'>
-                    <h3>Sign Up</h3>
+                    <h3 style={{ margin: '0' }}>Sign Up</h3>
                 </Link>
             }
 
@@ -36,12 +36,12 @@ const Nav = ({ currentUser, setCurrentUser }) => {
                         className="link"
                         onClick={handleLogout}>
                         {currentUser.user_name}
-                        <br /> Log Out</h3>
+                        <br />Log Out</h3>
 
                     :
 
                     <Link className="link" to='login'>
-                        <h3>Log In</h3>
+                        <h3 className="link" style={{ margin: '0' }}>Log In</h3>
                     </Link>
                 }
             </div>

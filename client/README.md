@@ -31,4 +31,3 @@ lookup.php?iid=${ingredientID}
 
 list.php?c=list
 - list categories
-
