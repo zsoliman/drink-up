@@ -1,23 +1,17 @@
 import { useState } from "react";
+import { useSelector } from 'react-redux'
 
-const DrinkCard = ({ currentUser, drink }) => {
+const DrinkCard = ({ drink }) => {
+    const user = useSelector((state) => state.user.value)
 
     // console.log('drink', drink)
-    console.log('currentuser:', currentUser)
+    // console.log(' Drink Card user:', user)
+
 
     const [isFavorite, setIsFavorite] = useState(false);
 
-    // const addToFavorites = async () => {
-    //     let options = {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ strDrink: drink.strDrink })
-    //     }
-    //     let req = await fetch('http://localhost:3000/recipes')
-    // }
-
     const addToRecipes = async () => {
-        let req = await fetch(`http://localhost:3000/recipes/${currentUser.id}`, {
+        let req = await fetch(`http://localhost:3000/recipes/${user.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

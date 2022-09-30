@@ -1,7 +1,14 @@
 import { useEffect } from "react"
 import DrinkCard from "./DrinkCard"
+import { useSelector, useDispatch } from 'react-redux'
+import { setValue } from '../redux/user'
 
-const Search = ({ setSearchTerm, drinks, currentUser, setCurrentUser }) => {
+const Search = ({ setSearchTerm, drinks }) => {
+
+    const user = useSelector((state) => state.user.value)
+    const dispatch = useDispatch();
+
+    // console.log('search current user', user)
 
     const handleSearch = (e) => {
         e.preventDefault()
@@ -11,12 +18,12 @@ const Search = ({ setSearchTerm, drinks, currentUser, setCurrentUser }) => {
     const fetchSession = async () => {
         let req = await fetch('/me')
         let res = await req.json()
-        setCurrentUser(res)
+        dispatch(setValue(res))
     }
 
     useEffect(() => {
         fetchSession()
-    }, [currentUser])
+    }, [])
 
     console.log('Drinks', drinks)
 
@@ -41,7 +48,6 @@ const Search = ({ setSearchTerm, drinks, currentUser, setCurrentUser }) => {
                             <DrinkCard
                                 key={drink.idDrink}
                                 drink={drink}
-                                currentUser={currentUser}
                             />
                         )
                     })

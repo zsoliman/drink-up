@@ -1,19 +1,21 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import { setValue } from '../redux/user'
 
-const Nav = ({ currentUser, setCurrentUser }) => {
-
-    // const navigate = useNavigate()
+const Nav = () => {
+    const user = useSelector((state) => state.user.value)
+    const dispatch = useDispatch();
 
     const handleLogout = () => {
         fetch('/logout', { method: 'DELETE' })
-        setCurrentUser({})
+        // setCurrentUser({})
+        dispatch(setValue({}))
         window.location.reload();
-        // navigate('/')
     }
 
     return (
         <div className="nav">
-            {currentUser ?
+            {user ?
                 <Link className="link" to='favorites'>
                     <h3 style={{ margin: '0' }}>Favorites</h3>
                 </Link>
@@ -31,11 +33,11 @@ const Nav = ({ currentUser, setCurrentUser }) => {
 
 
             <div>
-                {currentUser ?
+                {user ?
                     <h3
                         className="link"
                         onClick={handleLogout}>
-                        {currentUser.user_name}
+                        {user.user_name}
                         <br />Log Out</h3>
 
                     :

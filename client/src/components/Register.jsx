@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Navigate } from "react-router-dom"
 
+
 const Register = () => {
 
     const [leaving, setLeaving] = useState(false)

@@ -10,14 +10,19 @@ import Search from './components/Search';
 import Favorites from './components/Favorites';
 import Register from './components/Register';
 import Login from './components/Login';
-
+import { useSelector, useDispatch } from 'react-redux'
+import { setValue } from './redux/user'
 function App() {
 
   const [suggestedDrinks, setSuggestedDrinks] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [ingredients, setIngredients] = useState('')
   const [drinks, setDrinks] = useState('')
-  const [currentUser, setCurrentUser] = useState({})
+  const user = useSelector((state) => state.user.value)
+  // utilizing the state, import this into any component that needs the state
+  const dispatch = useDispatch();
+  // dispatch is to update or change the state
+
 
   // 'options' provided by[]
   const options = {
@@ -59,10 +64,8 @@ function App() {
   const fetchSession = async () => {
     let req = await fetch('/me')
     let res = await req.json()
-    setCurrentUser(res)
+    dispatch(setValue(res))
   }
-
-  // console.log('cu', currentUser)
 
   useEffect(() => {
     getSuggestedDrinks();
@@ -81,8 +84,8 @@ function App() {
       <BrowserRouter>
 
         <Nav
-          currentUser={currentUser}
-          setCurrentUser={setCurrentUser}
+        // currentUser={currentUser}
+        // setCurrentUser={setCurrentUser}
         />
 
         <Routes>
@@ -105,19 +108,19 @@ function App() {
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
               drinks={drinks}
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
+            // currentUser={currentUser}
+            // setCurrentUser={setCurrentUser}
             />} ></Route>
 
           <Route path='/login'
             element={<Login
-              setCurrentUser={setCurrentUser}
-              currentUser={currentUser}
+            // setCurrentUser={setCurrentUser}
+            // currentUser={currentUser}
             />} ></Route>
 
           <Route path='/favorites'
             element={<Favorites
-              currentUser={currentUser}
+            // currentUser={currentUser}
             />} ></Route>
 
           <Route path='/register'

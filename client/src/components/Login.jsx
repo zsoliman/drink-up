@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { setValue } from '../redux/user'
 
-const Login = ({ setCurrentUser, currentUser }) => {
+const Login = () => {
 
-
+    const user = useSelector((state) => state.user.value)
+    const dispatch = useDispatch();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState("")
     const [leaving, setLeaving] = useState(false)
 
+
+    console.log('login user', user)
 
     const handleLoginAsync = async (e) => {
         e.preventDefault()
@@ -24,10 +29,10 @@ const Login = ({ setCurrentUser, currentUser }) => {
             })
         })
         let res = await req.json()
-        // console.log('stuff', res)
+
         if (req.ok) {
 
-            setCurrentUser(res)
+            dispatch(setValue(res))
             setError('')
             setLeaving(true)
 
@@ -35,7 +40,6 @@ const Login = ({ setCurrentUser, currentUser }) => {
             setError(res.error)
         }
     }
-    // console.log('current user', currentUser)
 
     /////////////////////////////////////////////
     // .then function changed to async/await function above
@@ -78,7 +82,7 @@ const Login = ({ setCurrentUser, currentUser }) => {
 
     if (leaving) return <Navigate to='/' />
 
-    if (currentUser && currentUser.id) {
+    if (user && user.id) {
         return (
             <div>
                 Logged in!
