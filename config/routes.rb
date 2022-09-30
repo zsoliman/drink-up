@@ -14,7 +14,7 @@ Rails.application.routes.draw do
  get '/recipes', to: 'recipes#index'
  get '/recipes/:id', to: 'recipes#show'
 
- post '/recipes', to: 'recipes#create'
+ post '/recipes/:id', to: 'recipes#create'
 
  post '/login', to: 'sessions#create'
  delete '/logout', to: 'sessions#destroy'

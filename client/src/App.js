@@ -19,7 +19,7 @@ function App() {
   const [drinks, setDrinks] = useState('')
   const [currentUser, setCurrentUser] = useState({})
 
-  // 'options' provided by api
+  // 'options' provided by[]
   const options = {
     method: 'GET',
     headers: {
@@ -68,8 +68,12 @@ function App() {
     getSuggestedDrinks();
     searchIngredients();
     searchDrinks();
-    fetchSession();
   }, [searchTerm])
+
+  useEffect(() => {
+    fetchSession();
+  }, [])
+
 
   // Nav needs to be inside BrowserRouter but outside Routes because...
   return (
@@ -101,6 +105,8 @@ function App() {
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
               drinks={drinks}
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
             />} ></Route>
 
           <Route path='/login'

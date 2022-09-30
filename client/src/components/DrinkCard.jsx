@@ -1,8 +1,9 @@
 import { useState } from "react";
 
-const DrinkCard = ({ drink }) => {
+const DrinkCard = ({ currentUser, drink }) => {
 
-
+    // console.log('drink', drink)
+    console.log('currentuser:', currentUser)
 
     const [isFavorite, setIsFavorite] = useState(false);
 
@@ -15,11 +16,61 @@ const DrinkCard = ({ drink }) => {
     //     let req = await fetch('http://localhost:3000/recipes')
     // }
 
-    const handleClick = () => {
-        setIsFavorite(current => !current);
+    const addToRecipes = async () => {
+        let req = await fetch(`http://localhost:3000/recipes/${currentUser.id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accepts': 'application/json'
+            },
+            body: JSON.stringify({
+                strDrink: drink.strDrink,
+                strDrinkThumb: drink.strDrinkThumb,
+                strIngredient1: drink.strIngredient1,
+                strIngredient2: drink.strIngredient2,
+                strIngredient3: drink.strIngredient3,
+                strIngredient4: drink.strIngredient4,
+                strIngredient5: drink.strIngredient5,
+                strIngredient6: drink.strIngredient6,
+                strIngredient7: drink.strIngredient7,
+                strIngredient8: drink.strIngredient8,
+                strIngredient9: drink.strIngredient9,
+                strIngredient10: drink.strIngredient10,
+                strIngredient11: drink.strIngredient11,
+                strIngredient12: drink.strIngredient12,
+                strIngredient13: drink.strIngredient13,
+                strIngredient14: drink.strIngredient14,
+                strIngredient15: drink.strIngredient15,
+                strInstructions: drink.strInstructions,
+                strMeasure1: drink.strMeasure1,
+                strMeasure2: drink.strMeasure2,
+                strMeasure3: drink.strMeasure3,
+                strMeasure4: drink.strMeasure4,
+                strMeasure5: drink.strMeasure5,
+                strMeasure6: drink.strMeasure6,
+                strMeasure7: drink.strMeasure7,
+                strMeasure8: drink.strMeasure8,
+                strMeasure9: drink.strMeasure9,
+                strMeasure10: drink.strMeasure10,
+                strMeasure11: drink.strMeasure11,
+                strMeasure12: drink.strMeasure12,
+                strMeasure13: drink.strMeasure13,
+                strMeasure14: drink.strMeasure14,
+                strMeasure15: drink.strMeasure15
+            })
+        })
+        let res = await req.json()
+        if (res.ok) {
+            console.log('Posted to server:', res)
+        } else {
+            console.log('Error', res)
+        }
     }
 
-    // console.log(drink)
+    const handleClick = () => {
+        addToRecipes()
+        setIsFavorite(current => !current);
+    }
 
     return (
         <div className="drink-card">
@@ -42,6 +93,8 @@ const DrinkCard = ({ drink }) => {
                 <p>{drink.strMeasure15} {drink.strIngredient15}</p>
                 <p>Instructions: {drink.strInstructions}</p>
                 <p>Tags: {drink.strTags}</p>
+
+
                 <button className={isFavorite ? 'fav' : ''} onClick={handleClick}>fav</button>
             </div>
 

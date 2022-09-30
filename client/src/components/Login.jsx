@@ -24,17 +24,18 @@ const Login = ({ setCurrentUser, currentUser }) => {
             })
         })
         let res = await req.json()
+        // console.log('stuff', res)
         if (req.ok) {
-            setLeaving(true)
 
-            console.log('logged in bruv')
-            setError('')
             setCurrentUser(res)
+            setError('')
+            setLeaving(true)
 
         } else {
             setError(res.error)
         }
     }
+    // console.log('current user', currentUser)
 
     /////////////////////////////////////////////
     // .then function changed to async/await function above

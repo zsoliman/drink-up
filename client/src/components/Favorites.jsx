@@ -12,6 +12,10 @@ const Favorites = ({ currentUser }) => {
         setFavoritesList(res)
     }
 
+    // console.log('FL', favoritesList)
+    // console.log('user', currentUser)
+
+
     useEffect(() => {
         if (currentUser.id) {
             getFavorites()
@@ -25,7 +29,11 @@ const Favorites = ({ currentUser }) => {
             {
                 favoritesList.map((drink) => {
                     return (
-                        <DrinkCard key={drink.id} drink={drink.recipe} />
+                        <DrinkCard
+                            key={drink.id}
+                            drink={drink.recipe}
+                            currentUser={currentUser}
+                        />
                     )
                 })
             }
