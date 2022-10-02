@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+skip_before_action :authorize, only: [:create]
 
 def index
         recipes = Recipe.all
@@ -11,15 +12,21 @@ def index
     end
 
     def create
+        recipe = Recipe.find_by(strDrink: params[:strDrink])
+        if recipe
+            render json: recipe, status: :ok
+        else        
         recipe = Recipe.create!(recipe_params)
-        favorite = Favorite.create!(recipe_id: recipe.id, user_id: params[:user_id])
-        render json: recipe
+        render json: recipe, status: :created
+        end
+
     end
 
     private
 
     def recipe_params
         params.permit(
+            
             :strDrink,
             :strDrinkThumb,
             :strIngredient1,

@@ -13,7 +13,7 @@ const Login = () => {
     const [leaving, setLeaving] = useState(false)
 
 
-    console.log('login user', user)
+    // console.log('login user', user)
 
     const handleLoginAsync = async (e) => {
         e.preventDefault()

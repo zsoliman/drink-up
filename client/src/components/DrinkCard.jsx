@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux'
 const DrinkCard = ({ drink }) => {
     const user = useSelector((state) => state.user.value)
 
-    // console.log('drink', drink)
+    console.log('drink', drink)
     // console.log(' Drink Card user:', user)
 
 
     const [isFavorite, setIsFavorite] = useState(false);
+    // const [newDrink, setNewDrink] = useState({});
 
     const addToRecipes = async () => {
         let req = await fetch(`http://localhost:3000/recipes/${user.id}`, {
@@ -18,6 +19,7 @@ const DrinkCard = ({ drink }) => {
                 'Accepts': 'application/json'
             },
             body: JSON.stringify({
+                apiID: drink.idDrink,
                 strDrink: drink.strDrink,
                 strDrinkThumb: drink.strDrinkThumb,
                 strIngredient1: drink.strIngredient1,
@@ -54,15 +56,49 @@ const DrinkCard = ({ drink }) => {
             })
         })
         let res = await req.json()
-        if (res.ok) {
-            console.log('Posted to server:', res)
-        } else {
-            console.log('Error', res)
-        }
+        // setNewDrink(res)
+        console.log("res", res)
+        return res
+        // if (res) {
+        //     console.log('Posted to server:', res)
+        // } else {
+        //     console.log('Error', res)
+        // }
     }
 
-    const handleClick = () => {
-        addToRecipes()
+
+
+
+    // console.log('NEW:', newDrink)
+
+    const addToFavorites = async (newRecipe) => {
+        let req = await fetch(`http://localhost:3000/favorites`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accepts': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id: user.id,
+                recipe_id: newRecipe.id
+
+            })
+        })
+        // let res = await req.json()
+        // console.log(res)
+        // console.log(newDrink.id)
+        // if (res) {
+        // console.log('Posted to server:', res)
+        // } else {
+        // console.log('Error', res)
+        // }
+    };
+
+
+
+    const handleClick = async () => {
+        addToFavorites(await addToRecipes())
+        console.log("new recipe:", await addToRecipes())
         setIsFavorite(current => !current);
     }
 
