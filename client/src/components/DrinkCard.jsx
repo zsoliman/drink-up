@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useSelector } from 'react-redux'
 
-const DrinkCard = ({ drink }) => {
+const DrinkCard = ({ drink, favoritesList }) => {
     const user = useSelector((state) => state.user.value)
 
     console.log('drink', drink)
     // console.log(' Drink Card user:', user)
+    console.log('fav list:', favoritesList)
+    console.log('user:', user)
 
 
     const [isFavorite, setIsFavorite] = useState(false);
@@ -94,11 +96,32 @@ const DrinkCard = ({ drink }) => {
         // }
     };
 
+    const deleteFavorite = async () => {
+        let req = await fetch(`http://localhost:3000/favorites/${user.id}/${drink.id}`, {
+            method: 'DELETE'
+        })
+        console.log('Unfavorited')
+    }
+
 
 
     const handleClick = async () => {
-        addToFavorites(await addToRecipes())
-        console.log("new recipe:", await addToRecipes())
+
+        const isFound = user.recipes.some(el => {
+            if (el.id === drink.id) {
+                console.log(el.id)
+                console.log(drink.id)
+                return true
+            }
+        })
+
+        if (isFound) {
+            console.log('yaaaay')
+            deleteFavorite()
+        } else {
+            addToFavorites(await addToRecipes())
+        }
+        // console.log("new recipe:", await addToRecipes())
         setIsFavorite(current => !current);
     }
 

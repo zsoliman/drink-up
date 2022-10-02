@@ -5,7 +5,10 @@ Rails.application.routes.draw do
  get '/users/:id/favorites', to: 'users#show_favorites'
  
  post '/users', to: 'users#create'
+
+ get '/favorites', to: 'favorites#index'
  post '/favorites', to: 'favorites#create'
+ delete '/favorites/:user_id/:recipe_id', to: 'favorites#destroy'
 
  get '/ratings', to: 'ratings#index'
  get '/ratings/:id', to: 'ratings#show'

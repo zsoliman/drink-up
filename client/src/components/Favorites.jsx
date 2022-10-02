@@ -32,6 +32,7 @@ const Favorites = () => {
                 favoritesList.map((drink) => {
                     return (
                         <DrinkCard
+                            favoritesList={favoritesList}
                             key={drink.id}
                             drink={drink.recipe}
                         />
