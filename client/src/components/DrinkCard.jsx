@@ -1,17 +1,42 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from 'react-redux'
 
 const DrinkCard = ({ drink, favoritesList }) => {
     const user = useSelector((state) => state.user.value)
 
-    console.log('drink', drink)
+    // console.log('drink', drink)
     // console.log(' Drink Card user:', user)
-    console.log('fav list:', favoritesList)
-    console.log('user:', user)
+    // console.log('fav list:', favoritesList)
+    // console.log('user:', user)
 
 
     const [isFavorite, setIsFavorite] = useState(false);
-    // const [newDrink, setNewDrink] = useState({});
+
+    // mapping through the list of favorites, checking to see if the drink in the card is on the list of favorites to change state and update button color
+
+    const favoriteSetter = () => {
+        favoritesList.map((fav) => {
+            // console.log('fav', fav.recipe_id)
+            // console.log('drink', drink.id)
+            if (fav.recipe_id == drink.id) {
+                setIsFavorite(true)
+                console.log(isFavorite)
+            }
+            else {
+                console.log(isFavorite)
+            }
+
+        })
+    }
+
+    useEffect(() => {
+
+        favoriteSetter()
+    }, [])
+
+
+
 
     const addToRecipes = async () => {
         let req = await fetch(`http://localhost:3000/recipes/${user.id}`, {
@@ -58,20 +83,8 @@ const DrinkCard = ({ drink, favoritesList }) => {
             })
         })
         let res = await req.json()
-        // setNewDrink(res)
-        console.log("res", res)
         return res
-        // if (res) {
-        //     console.log('Posted to server:', res)
-        // } else {
-        //     console.log('Error', res)
-        // }
     }
-
-
-
-
-    // console.log('NEW:', newDrink)
 
     const addToFavorites = async (newRecipe) => {
         let req = await fetch(`http://localhost:3000/favorites`, {
@@ -83,7 +96,6 @@ const DrinkCard = ({ drink, favoritesList }) => {
             body: JSON.stringify({
                 user_id: user.id,
                 recipe_id: newRecipe.id
-
             })
         })
         // let res = await req.json()
@@ -103,25 +115,22 @@ const DrinkCard = ({ drink, favoritesList }) => {
         console.log('Unfavorited')
     }
 
-
-
     const handleClick = async () => {
 
         const isFound = user.recipes.some(el => {
             if (el.id === drink.id) {
-                console.log(el.id)
-                console.log(drink.id)
+                // console.log(el.id)
+                // console.log(drink.id)
                 return true
             }
         })
 
         if (isFound) {
-            console.log('yaaaay')
             deleteFavorite()
         } else {
             addToFavorites(await addToRecipes())
         }
-        // console.log("new recipe:", await addToRecipes())
+
         setIsFavorite(current => !current);
     }
 
@@ -145,10 +154,9 @@ const DrinkCard = ({ drink, favoritesList }) => {
                 <p>{drink.strMeasure14} {drink.strIngredient14}</p>
                 <p>{drink.strMeasure15} {drink.strIngredient15}</p>
                 <p>Instructions: {drink.strInstructions}</p>
-                <p>Tags: {drink.strTags}</p>
+                {/* <p>Tags: {drink.strTags}</p> */}
 
-
-                <button className={isFavorite ? 'fav' : ''} onClick={handleClick}>fav</button>
+                <button className={isFavorite ? 'fav' : ''} onClick={handleClick}>Like</button>
             </div>
 
             <img src={drink.strDrinkThumb} alt='A nice drink with no image' className="drink-img" />
