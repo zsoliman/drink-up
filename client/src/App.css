@@ -1,21 +1,6 @@
 .App {
   text-align: center;
-  /* font-family: 'Courier New', Courier, monospace; */
   font-family: 'Comfortaa', cursive;
-
-}
-
-.btn {
-  font-family: 'Comfortaa', cursive;
-  font-size: 1em;
-  margin: 5em;
-  background-color: #ebebeb;
-  border: none;
-  height: 30em;
-  width: 25em;
-  cursor: pointer;
-  border-radius: 10px;
-
 }
 
 .drink-card {
@@ -39,6 +24,29 @@
   color: #ebebeb;
 }
 
+.home-screen-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20vh;
+}
+
+.home-link {
+  font-family: 'Comfortaa', cursive;
+  font-size: 2em;
+  background-color: #ebebeb;
+  border: none;
+  height: 10em;
+  width: 8em;
+  cursor: pointer;
+  border-radius: 10px;
+  opacity: 85%;
+}
+
+.home-link:hover {
+  opacity: 100%;
+}
+
 .info-sesh {
   padding: 0 10em;
   letter-spacing: 1.5px;
@@ -47,7 +55,8 @@
 
 .link {
   text-decoration: none;
-  color: black;
+  color: #ebebeb;
+  font-size: 1.5em;
   cursor: pointer;
   margin: 0;
 }
@@ -57,15 +66,58 @@
 }
 
 .logo {
-  height: 5em;
+  height: 10em;
+  margin: 0;
   font-family: 'Kaushan Script', cursive;
 }
 
+.login-form {
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  border: solid black 2px;
+  width: 40em;
+  border-radius: 8px;
+  margin-left: 50vw;
+  transform: translate(-50%);
+  margin-top: 10vh;
+  padding: 100px 0;
+  /* background-color: #ebebeb; */
+}
+
+.login-input {
+  height: 3em;
+  width: 20em;
+  font-family: 'Comfortaa',
+    cursive;
+  font-size: large;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  margin: 5px;
+}
+
+.login-btn {
+  height: 3em;
+  width: 20em;
+  font-family: 'Comfortaa', cursive;
+  font-size: large;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin: 20px;
+}
+
 .nav {
+
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #ebebeb;
+  background-color: #000000;
+  opacity: 85%;
 }
 
 .search-bar {
@@ -90,4 +142,16 @@
   border: none;
   cursor: pointer;
   background-color: #ebebeb;
+}
+
+.Video {
+  animation: fade .3s ease-in;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }

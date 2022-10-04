@@ -31,3 +31,13 @@ lookup.php?iid=${ingredientID}
 
 list.php?c=list
 - list categories
+
+
+to do:
+- change the title from REACT APP
+- create a favicon(if theres time)
+- add visual hiegherarchy
+- add card flip to recipes on click
+
+- make nav bar smaller
+- move options closer to the logo

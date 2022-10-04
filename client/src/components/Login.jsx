@@ -92,21 +92,32 @@ const Login = () => {
 
     return (
         <div>
-            <form onSubmit={handleLoginAsync}>
+            <form
+                className='login-form'
+                onSubmit={handleLoginAsync}>
 
                 <p style={{ color: 'red' }}>{error ? error : null}</p>
 
                 <p>Login:</p>
 
                 <input
-                    type="text" onChange={handleChangeUsername} value={username} placeholder='username'
+                    type="text"
+                    className='login-input'
+                    onChange={handleChangeUsername}
+                    value={username}
+                    placeholder='username'
                 />
 
                 <input
-                    type="password" onChange={handleChangePassword} value={password} placeholder='password'
+                    type="password"
+                    className='login-input'
+                    onChange={handleChangePassword}
+                    value={password}
+                    placeholder='password'
                 />
 
                 <input
+                    className='login-btn'
                     type="submit" value="Login"
                 />
 
