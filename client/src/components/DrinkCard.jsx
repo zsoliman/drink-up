@@ -105,7 +105,7 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
     }
 
     return (
-        <div className="drink-card">
+        <div className="drink-card" id={drink.strDrink}>
             <div>
                 <h2>{drink.strDrink}</h2>
                 <p>{drink.strMeasure1} {drink.strIngredient1}</p>

@@ -62,6 +62,7 @@ function App() {
       method: 'DELETE'
     })
     console.log('Unfavorited')
+    document.getElementById(drink.strDrink).remove()
   }
 
 
