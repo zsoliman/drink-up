@@ -1,6 +1,6 @@
 import DrinkCard from "./DrinkCard";
 
-const DrinkSuggestion = ({ suggestedDrinks }) => {
+const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites }) => {
 
     return (
         <div>
@@ -11,6 +11,8 @@ const DrinkSuggestion = ({ suggestedDrinks }) => {
                         <DrinkCard
                             key={drink.idDrink}
                             drink={drink}
+                            favoritesList={favoritesList}
+                            addToFavorites={addToFavorites}
                         />
 
                     )

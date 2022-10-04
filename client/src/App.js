@@ -23,6 +23,48 @@ function App() {
   const dispatch = useDispatch();
   // dispatch is to update or change the state
 
+  // console.log('user', user)
+
+  const [favoritesList, setFavoritesList] = useState([])
+
+  const getFavorites = async () => {
+    let req = await fetch(`http://localhost:3000/users/${user.id}/favorites`)
+    let res = await req.json()
+    setFavoritesList([...res])
+  }
+
+  const addToFavorites = async (newRecipe) => {
+    let req = await fetch(`http://localhost:3000/favorites`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accepts': 'application/json'
+      },
+      body: JSON.stringify({
+        user_id: user.id,
+        recipe_id: newRecipe.id
+      })
+    })
+    // console.log(newRecipe)
+    let res = await req.json()
+    // console.log(res)
+    // console.log(newDrink.id)
+    // if (res) {
+    console.log('Posted to server:', res)
+    // } else {
+    // console.log('Error', res.error())
+    // }
+    getFavorites()
+  };
+
+
+
+
+  // useEffect(() => {
+
+  // }, [])
+
+
 
   // 'options' provided by[]
   const options = {
@@ -75,7 +117,14 @@ function App() {
 
   useEffect(() => {
     fetchSession();
+    // if (user) {
+    //   getFavorites()
+    // } else { setFavoritesList([]) }
   }, [])
+
+  useEffect(() => {
+    getFavorites();
+  }, [user])
 
 
   // Nav needs to be inside BrowserRouter but outside Routes because...
@@ -84,8 +133,6 @@ function App() {
       <BrowserRouter>
 
         <Nav
-        // currentUser={currentUser}
-        // setCurrentUser={setCurrentUser}
         />
 
         <Routes>
@@ -94,7 +141,10 @@ function App() {
 
           <Route path='/drinks'
             element={<DrinkSuggestion
-              suggestedDrinks={suggestedDrinks} />} ></Route>
+              suggestedDrinks={suggestedDrinks}
+              favoritesList={favoritesList}
+              addToFavorites={addToFavorites}
+            />} ></Route>
 
           <Route path='/searchinfo'
             element={<SearchInfo
@@ -108,19 +158,18 @@ function App() {
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
               drinks={drinks}
-            // currentUser={currentUser}
-            // setCurrentUser={setCurrentUser}
+              favoritesList={favoritesList}
+              addToFavorites={addToFavorites}
             />} ></Route>
 
           <Route path='/login'
             element={<Login
-            // setCurrentUser={setCurrentUser}
-            // currentUser={currentUser}
             />} ></Route>
 
           <Route path='/favorites'
             element={<Favorites
-            // currentUser={currentUser}
+              favoritesList={favoritesList}
+              addToFavorites={addToFavorites}
             />} ></Route>
 
           <Route path='/register'

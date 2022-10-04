@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from 'react-redux'
 
-const DrinkCard = ({ drink, favoritesList }) => {
+const DrinkCard = ({ drink, favoritesList, addToFavorites }) => {
     const user = useSelector((state) => state.user.value)
 
     // console.log('drink', drink)
@@ -11,30 +11,29 @@ const DrinkCard = ({ drink, favoritesList }) => {
     // console.log('user:', user)
 
 
-    const [isFavorite, setIsFavorite] = useState(false);
+
 
     // mapping through the list of favorites, checking to see if the drink in the card is on the list of favorites to change state and update button color
 
+    const [isFavorite, setIsFavorite] = useState(false);
+
     const favoriteSetter = () => {
         favoritesList.map((fav) => {
-            // console.log('fav', fav.recipe_id)
-            // console.log('drink', drink.id)
-            if (fav.recipe_id == drink.id) {
+            // console.log('fav', fav)
+            // console.log('drink', drink.strDrink)
+            if (drink.strDrink === fav.recipe.strDrink) {
                 setIsFavorite(true)
-                console.log(isFavorite)
+                // console.log('if', isFavorite)
             }
             else {
-                console.log(isFavorite)
+                // console.log('else', isFavorite)
             }
-
         })
     }
 
     useEffect(() => {
-
         favoriteSetter()
     }, [])
-
 
 
 
@@ -86,27 +85,7 @@ const DrinkCard = ({ drink, favoritesList }) => {
         return res
     }
 
-    const addToFavorites = async (newRecipe) => {
-        let req = await fetch(`http://localhost:3000/favorites`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accepts': 'application/json'
-            },
-            body: JSON.stringify({
-                user_id: user.id,
-                recipe_id: newRecipe.id
-            })
-        })
-        // let res = await req.json()
-        // console.log(res)
-        // console.log(newDrink.id)
-        // if (res) {
-        // console.log('Posted to server:', res)
-        // } else {
-        // console.log('Error', res)
-        // }
-    };
+
 
     const deleteFavorite = async () => {
         let req = await fetch(`http://localhost:3000/favorites/${user.id}/${drink.id}`, {

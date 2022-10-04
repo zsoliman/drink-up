@@ -4,27 +4,10 @@ import DrinkCard from "./DrinkCard"
 import { useSelector } from 'react-redux'
 
 
-const Favorites = () => {
+const Favorites = ({ favoritesList, addToFavorites }) => {
     const user = useSelector((state) => state.user.value)
 
-    // console.log('favorites CU', user)
-
-    const [favoritesList, setFavoritesList] = useState([])
-
-    const getFavorites = async () => {
-        let req = await fetch(`http://localhost:3000/users/${user.id}/favorites`)
-        let res = await req.json()
-        setFavoritesList(res)
-    }
-
-
-    useEffect(() => {
-        if (user.id) {
-            getFavorites()
-        }
-    }, [])
-
-
+    console.log(favoritesList)
 
     return (
         <div>
@@ -37,6 +20,7 @@ const Favorites = () => {
                             favoritesList={favoritesList}
                             key={drink.id}
                             drink={drink.recipe}
+                            addToFavorites={addToFavorites}
                         />
                     )
                 })
