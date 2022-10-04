@@ -23,8 +23,6 @@ function App() {
   const dispatch = useDispatch();
   // dispatch is to update or change the state
 
-  // console.log('user', user)
-
   const [favoritesList, setFavoritesList] = useState([])
 
   const getFavorites = async () => {
@@ -45,15 +43,8 @@ function App() {
         recipe_id: newRecipe.id
       })
     })
-    // console.log(newRecipe)
     let res = await req.json()
-    // console.log(res)
-    // console.log(newDrink.id)
-    // if (res) {
     console.log('Posted to server:', res)
-    // } else {
-    // console.log('Error', res.error())
-    // }
     getFavorites()
   };
 
