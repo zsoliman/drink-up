@@ -40,7 +40,7 @@ const Login = () => {
             setError(res.error)
         }
     }
-
+    // console.log(user)
     /////////////////////////////////////////////
     // .then function changed to async/await function above
     // 

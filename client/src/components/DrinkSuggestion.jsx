@@ -1,6 +1,6 @@
 import DrinkCard from "./DrinkCard";
 
-const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites }) => {
+const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, deleteFavorite }) => {
 
     return (
         <div>
@@ -13,6 +13,7 @@ const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites }) => 
                             drink={drink}
                             favoritesList={favoritesList}
                             addToFavorites={addToFavorites}
+                            deleteFavorite={deleteFavorite}
                         />
 
                     )

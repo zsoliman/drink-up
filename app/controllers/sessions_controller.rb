@@ -13,14 +13,6 @@ skip_before_action :authorize, only: [:create, :show, :destroy]
         end   
     end
 
-    # def destroy
-    #     logout!
-    #     render json: {
-    #         status: 200,
-    #         logged_out: true
-    #     }
-    # end
-
     def show 
         if current_user
             render json: current_user

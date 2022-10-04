@@ -4,7 +4,7 @@ import DrinkCard from "./DrinkCard"
 import { useSelector } from 'react-redux'
 
 
-const Favorites = ({ favoritesList, addToFavorites }) => {
+const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
     const user = useSelector((state) => state.user.value)
 
     console.log(favoritesList)
@@ -21,6 +21,7 @@ const Favorites = ({ favoritesList, addToFavorites }) => {
                             key={drink.id}
                             drink={drink.recipe}
                             addToFavorites={addToFavorites}
+                            deleteFavorite={deleteFavorite}
                         />
                     )
                 })

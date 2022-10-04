@@ -57,6 +57,12 @@ function App() {
     getFavorites()
   };
 
+  const deleteFavorite = async (drink) => {
+    let req = await fetch(`http://localhost:3000/favorites/${user.id}/${drink.id}`, {
+      method: 'DELETE'
+    })
+    console.log('Unfavorited')
+  }
 
 
 
@@ -144,6 +150,7 @@ function App() {
               suggestedDrinks={suggestedDrinks}
               favoritesList={favoritesList}
               addToFavorites={addToFavorites}
+              deleteFavorite={deleteFavorite}
             />} ></Route>
 
           <Route path='/searchinfo'
@@ -160,6 +167,7 @@ function App() {
               drinks={drinks}
               favoritesList={favoritesList}
               addToFavorites={addToFavorites}
+              deleteFavorite={deleteFavorite}
             />} ></Route>
 
           <Route path='/login'
@@ -170,6 +178,7 @@ function App() {
             element={<Favorites
               favoritesList={favoritesList}
               addToFavorites={addToFavorites}
+              deleteFavorite={deleteFavorite}
             />} ></Route>
 
           <Route path='/register'

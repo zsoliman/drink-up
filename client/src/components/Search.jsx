@@ -3,7 +3,7 @@ import DrinkCard from "./DrinkCard"
 import { useSelector, useDispatch } from 'react-redux'
 import { setValue } from '../redux/user'
 
-const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites }) => {
+const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFavorite }) => {
 
     const user = useSelector((state) => state.user.value)
     const dispatch = useDispatch();
@@ -50,6 +50,7 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites }) => {
                                 drink={drink}
                                 favoritesList={favoritesList}
                                 addToFavorites={addToFavorites}
+                                deleteFavorite={deleteFavorite}
                             />
                         )
                     })
