@@ -13,7 +13,7 @@ const Home = () => {
             >
                 <source src={barman} type='video/mp4' />
             </video>
-
+            <h1 className='title'>Drink Up!</h1>
             <div className="home-screen-div">
                 <Link to='/drinks'>
                     <button className="home-link">Thirsty? <br /><br /> Get A Suggestion</button>

@@ -66,7 +66,7 @@
 }
 
 .logo {
-  height: 10em;
+  height: 5em;
   margin: 0;
   font-family: 'Kaushan Script', cursive;
 }
@@ -112,12 +112,12 @@
 }
 
 .nav {
-
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #000000;
   opacity: 85%;
+  height: 6em;
 }
 
 .search-bar {
@@ -142,6 +142,13 @@
   border: none;
   cursor: pointer;
   background-color: #ebebeb;
+}
+
+.title {
+  color: #ebebeb;
+  font-size: 5em;
+  opacity: 85%;
+  margin-bottom: 0;
 }
 
 .Video {

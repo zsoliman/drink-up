@@ -34,10 +34,10 @@ list.php?c=list
 
 
 to do:
-- change the title from REACT APP
-- create a favicon(if theres time)
+- [DONE]change the title from REACT APP
+- [DONE]create a favicon(if theres time)
 - add visual hiegherarchy
 - add card flip to recipes on click
 
-- make nav bar smaller
-- move options closer to the logo
+- [DONE]make nav bar smaller
+- [DONE]move options closer to the logo

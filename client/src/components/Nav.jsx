@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { setValue } from '../redux/user'
 import drinkuplogo from '../media/drinkuplogo.PNG'
+import drinkupnav from '../media/drinkupnav.PNG'
 
 const Nav = () => {
     const user = useSelector((state) => state.user.value)
@@ -29,7 +30,7 @@ const Nav = () => {
             }
 
             <h3 className="logo"><Link to='/'>
-                <img className="logo" src={drinkuplogo}
+                <img className="logo" src={drinkupnav}
                 // "https://img.icons8.com/pastel-glyph/344/cocktail--v2.png"
                 />
             </Link></h3>
@@ -41,7 +42,7 @@ const Nav = () => {
                         className="link"
                         onClick={handleLogout}>
                         {user.user_name}
-                        <br /><br />Log Out</h3>
+                        <br />Log Out</h3>
 
                     :
 
