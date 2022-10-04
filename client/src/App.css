@@ -1,11 +1,12 @@
 .App {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Comfortaa', cursive;
 
 }
 
 .btn {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Comfortaa', cursive;
   font-size: 1em;
   margin: 5em;
   background-color: #ebebeb;

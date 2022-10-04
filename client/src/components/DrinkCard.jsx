@@ -89,8 +89,6 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
 
         const isFound = user.recipes.some(el => {
             if (el.id === drink.id) {
-                // console.log(el.id)
-                // console.log(drink.id)
                 return true
             }
         })
@@ -107,7 +105,8 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
     return (
         <div className="drink-card" id={drink.strDrink}>
             <div>
-                <h2>{drink.strDrink}</h2>
+                <h1>{drink.strDrink}</h1>
+                <h3>What you'll need:</h3>
                 <p>{drink.strMeasure1} {drink.strIngredient1}</p>
                 <p>{drink.strMeasure2} {drink.strIngredient2}</p>
                 <p>{drink.strMeasure3} {drink.strIngredient3}</p>
@@ -123,7 +122,8 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
                 <p>{drink.strMeasure13} {drink.strIngredient13}</p>
                 <p>{drink.strMeasure14} {drink.strIngredient14}</p>
                 <p>{drink.strMeasure15} {drink.strIngredient15}</p>
-                <p>Instructions: {drink.strInstructions}</p>
+                <h3>Instructions:</h3>
+                <p>{drink.strInstructions}</p>
                 {/* <p>Tags: {drink.strTags}</p> */}
 
                 <button className={isFavorite ? 'fav' : ''} onClick={handleClick}>Like</button>
