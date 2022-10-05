@@ -54,9 +54,35 @@ body {
   /* background: rgba(255, 255, 255, 0.2) */
 }
 
+.card-info {
+  overflow-y: scroll;
+  padding: 0 10px;
+  height: 330px;
+  width: 350px;
+}
+
 .card__side--back {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+.card-info::-webkit-scrollbar {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  width: 7px;
+
+}
+
+.card-info::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 #2ED1CC;
+  border-radius: 10px;
+}
+
+.card-info::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #000;
+  outline: 1px solid #2ED1CC;
+  border-radius: 10px;
 }
 
 /* .card__side--back-1 {
@@ -92,7 +118,26 @@ body {
   /* margin-left: 2em; */
 }
 
+.unfav {
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #ebebeb;
+  color: #000;
+}
+
 .fav {
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
   background-color: red;
   color: #ebebeb;
 }
@@ -130,9 +175,9 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.home-link-img:hover {
+/* .home-link-img:hover {
   opacity: 30%;
-}
+} */
 
 .home-link {
   display: flex;
@@ -160,6 +205,10 @@ body {
 .home-link:hover {
   transform: scale(1.1);
   /* opacity: 100%; */
+}
+
+.home-link:hover img {
+  opacity: 30%;
 }
 
 .home-arrow {
@@ -195,7 +244,8 @@ body {
 }
 
 .logo {
-  height: 5em;
+  margin-top: 30px;
+  height: 8em;
 
   /* margin: 20px 0 0 0; */
   font-family: 'Kaushan Script', cursive;
