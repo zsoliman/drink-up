@@ -33,7 +33,6 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
         <div style={{ backgroundColor: '#000000' }}>
             <h2 className="header">Find Your Drink:</h2>
             <form
-                style={{ marginTop: '10em' }}
                 onChange={handleSearch}
             >
                 <input

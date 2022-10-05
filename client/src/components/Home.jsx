@@ -68,6 +68,9 @@ const Home = () => {
                     Want to Learn Something? <br /><br /> Read about any drink
                 </Link>
             </div>
+            <div>
+                <p> Zachary Soliman ⓒ 2022 </p>
+            </div>
         </div>
     )
 }

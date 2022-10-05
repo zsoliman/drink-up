@@ -111,7 +111,7 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
 
                 <div className="card__side card__side--back card__side--back-1">
                     <div className="card-info">
-                        <h3>What you'll need:</h3>
+                        <h2>What you'll need:</h2>
                         <p>{drink.strMeasure1} {drink.strIngredient1}</p>
                         <p>{drink.strMeasure2} {drink.strIngredient2}</p>
                         <p>{drink.strMeasure3} {drink.strIngredient3}</p>
@@ -127,7 +127,7 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
                         <p>{drink.strMeasure13} {drink.strIngredient13}</p>
                         <p>{drink.strMeasure14} {drink.strIngredient14}</p>
                         <p>{drink.strMeasure15} {drink.strIngredient15}</p>
-                        <h3>Instructions:</h3>
+                        <h2>Instructions:</h2>
                         <p>{drink.strInstructions}</p>
                         {/* <p>Tags: {drink.strTags}</p> */}
                     </div>
