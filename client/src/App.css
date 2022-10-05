@@ -3,15 +3,76 @@
   font-family: 'Comfortaa', cursive;
 }
 
-.drink-card {
-  border: solid 2px black;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+
+}
+
+.card {
+  /* border: solid 2px black;
   border-radius: 10px;
   display: flex;
   height: 70vh;
   width: auto;
   padding: 2em;
-  margin: 2em;
+  margin: 2em; */
+
+  -webkit-perspective: 150rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+  width: 50rem;
+  margin-bottom: 25px;
 }
+
+.card__side {
+  height: 52rem;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.card__side--front {
+  background-color: #fff;
+}
+
+.card__side--front-1 {
+  background: linear-gradient(-45deg, #f403d1, #64b5f6);
+}
+
+.card__side--back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.card__side--back-1 {
+  background: linear-gradient(-45deg, #64b5f6, #f403d1);
+}
+
+.card:hover .card__side--front-1 {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+
+.card:hover .card__side--back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
 
 .drink-img {
   height: 50vw;
@@ -28,19 +89,19 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 20vh;
+  margin-top: 10vh;
 }
 
 .home-link {
   font-family: 'Comfortaa', cursive;
   font-size: 2em;
-  background-color: #ebebeb;
+  background-color: #84b1af;
   border: none;
   height: 10em;
   width: 8em;
   cursor: pointer;
   border-radius: 10px;
-  opacity: 85%;
+  opacity: 95%;
 }
 
 .home-link:hover {
@@ -62,7 +123,7 @@
 }
 
 .link:hover {
-  border-bottom: solid 1px red;
+  border-bottom: solid 1px #2ED1CC;
 }
 
 .logo {
@@ -145,10 +206,11 @@
 }
 
 .title {
-  color: #ebebeb;
-  font-size: 5em;
+  font-family: 'Kaushan Script', cursive;
+  color: #2ED1CC;
+  font-size: 7em;
   opacity: 85%;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 
 .Video {
@@ -161,4 +223,11 @@
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: -1;
+}
+
+@keyframes fade {
+  0% {
+    /* starting point for anything with an 'animation' tag */
+    opacity: 0%;
+  }
 }

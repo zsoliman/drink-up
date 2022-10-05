@@ -10,9 +10,6 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
     // console.log('fav list:', favoritesList)
     // console.log('user:', user)
 
-
-
-
     // mapping through the list of favorites, checking to see if the drink in the card is on the list of favorites to change state and update button color
 
     const [isFavorite, setIsFavorite] = useState(false);
@@ -103,9 +100,15 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
     }
 
     return (
-        <div className="drink-card" id={drink.strDrink}>
-            <div>
+
+        <div className="card" id={drink.strDrink}>
+            <div className="card__side card__side--front-1">
+
                 <h1>{drink.strDrink}</h1>
+                <img src={drink.strDrinkThumb} alt='A nice drink with no image' className="drink-img" />
+            </div>
+
+            <div className="card__side card__side--back card__side--back-1">
                 <h3>What you'll need:</h3>
                 <p>{drink.strMeasure1} {drink.strIngredient1}</p>
                 <p>{drink.strMeasure2} {drink.strIngredient2}</p>
@@ -129,7 +132,6 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
                 <button className={isFavorite ? 'fav' : ''} onClick={handleClick}>Like</button>
             </div>
 
-            <img src={drink.strDrinkThumb} alt='A nice drink with no image' className="drink-img" />
 
         </div>
 

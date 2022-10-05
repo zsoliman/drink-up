@@ -12,20 +12,22 @@ const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
     return (
         <div>
             <h2>Favorites Page</h2>
+            <div className="card-container">
+                {
+                    favoritesList.map((drink) => {
+                        return (
 
-            {
-                favoritesList.map((drink) => {
-                    return (
-                        <DrinkCard
-                            favoritesList={favoritesList}
-                            key={drink.id}
-                            drink={drink.recipe}
-                            addToFavorites={addToFavorites}
-                            deleteFavorite={deleteFavorite}
-                        />
-                    )
-                })
-            }
+                            <DrinkCard
+                                favoritesList={favoritesList}
+                                key={drink.id}
+                                drink={drink.recipe}
+                                addToFavorites={addToFavorites}
+                                deleteFavorite={deleteFavorite}
+                            />
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }
