@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Comfortaa', cursive;
+  color: #ebebeb;
 }
 
 .card-container {
@@ -27,6 +28,7 @@
   height: 52rem;
   width: 50rem;
   margin-bottom: 25px;
+
 }
 
 .card__side {
@@ -39,7 +41,7 @@
   width: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 3px;
+  border-radius: 10px;
   overflow: hidden;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
@@ -206,6 +208,7 @@
 }
 
 .title {
+  animation: fade 2s forwards;
   font-family: 'Kaushan Script', cursive;
   color: #2ED1CC;
   font-size: 7em;

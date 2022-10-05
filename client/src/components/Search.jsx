@@ -28,7 +28,7 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
     console.log('Drinks', drinks)
 
     return (
-        <div>
+        <div style={{ backgroundColor: '#000000' }}>
             <form
                 onChange={handleSearch}
             >
@@ -40,7 +40,7 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
 
             </form>
 
-            <div>
+            <div className="card-container">
                 {
                     drinks.map((drink) => {
 

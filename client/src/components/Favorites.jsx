@@ -10,8 +10,8 @@ const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
     console.log(favoritesList)
 
     return (
-        <div>
-            <h2>Favorites Page</h2>
+        <div style={{ backgroundColor: '#000000' }}>
+            <h2 style={{ marginTop: '0', paddingTop: '20px' }}>Favorites Page</h2>
             <div className="card-container">
                 {
                     favoritesList.map((drink) => {

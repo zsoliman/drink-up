@@ -11,7 +11,7 @@ const SearchInfo = ({ ingredients, setSearchTerm }) => {
 
 
     return (
-        <div>
+        <div style={{ backgroundColor: '#000', height: '100vh' }}>
             <form onChange={handleSearch}>
                 <input
                     className="search-bar"

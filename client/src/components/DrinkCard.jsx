@@ -79,6 +79,7 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
             })
         })
         let res = await req.json()
+        console.log('addtoRecipes', res)
         return res
     }
 
