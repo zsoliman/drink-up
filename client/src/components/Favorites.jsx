@@ -15,7 +15,7 @@ const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
 
 
             <div style={{ backgroundColor: '#000000' }}>
-                <h2 style={{ marginTop: '0', paddingTop: '20px' }}>Favorites Page</h2>
+                <h2 className="header">Your Favorites:</h2>
                 <div className="card-container">
                     {
 

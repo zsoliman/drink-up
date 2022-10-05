@@ -4,7 +4,7 @@ const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, delet
 
     return (
         <div style={{ backgroundColor: '#000000', height: '100vh' }}>
-            <h2 style={{ marginTop: '0', paddingTop: '20px' }}>Suggested Drinks</h2>
+            <h2 className="header">Suggested Drinks</h2>
             <div className="card-container">
                 {
                     suggestedDrinks.map((drink) => {

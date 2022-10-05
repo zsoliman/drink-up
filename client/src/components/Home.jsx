@@ -65,7 +65,7 @@ const Home = () => {
                     <img className='home-link-img'
                         src={mojito} />
 
-                    Curious about your alcohol of choice? <br /><br /> Read about it
+                    Want to Learn Something? <br /><br /> Read about any drink
                 </Link>
             </div>
         </div>
