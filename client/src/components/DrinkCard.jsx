@@ -60,7 +60,6 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
                 strIngredient13: drink.strIngredient13,
                 strIngredient14: drink.strIngredient14,
                 strIngredient15: drink.strIngredient15,
-                strInstructions: drink.strInstructions,
                 strMeasure1: drink.strMeasure1,
                 strMeasure2: drink.strMeasure2,
                 strMeasure3: drink.strMeasure3,
@@ -75,7 +74,8 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
                 strMeasure12: drink.strMeasure12,
                 strMeasure13: drink.strMeasure13,
                 strMeasure14: drink.strMeasure14,
-                strMeasure15: drink.strMeasure15
+                strMeasure15: drink.strMeasure15,
+                strInstructions: drink.strInstructions
             })
         })
         let res = await req.json()
