@@ -98,7 +98,7 @@ const Login = () => {
 
                 <p style={{ color: 'red' }}>{error ? error : null}</p>
 
-                <p>Login:</p>
+                <h1>Login:</h1>
 
                 <input
                     type="text"

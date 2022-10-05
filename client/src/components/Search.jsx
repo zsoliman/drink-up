@@ -27,9 +27,12 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
 
     console.log('Drinks', drinks)
 
+    if (!drinks) return <h1>loading</h1>
+
     return (
         <div style={{ backgroundColor: '#000000' }}>
             <form
+                style={{ marginTop: '10em' }}
                 onChange={handleSearch}
             >
                 <input

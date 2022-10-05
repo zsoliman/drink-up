@@ -9,10 +9,11 @@ const SearchInfo = ({ ingredients, setSearchTerm }) => {
     // console.log('searchTerm:', searchTerm)
     console.log('ingredients:', ingredients)
 
+    if (!ingredients) return <h1>loading</h1>
 
     return (
         <div style={{ backgroundColor: '#000', height: '100vh' }}>
-            <form onChange={handleSearch}>
+            <form style={{ marginTop: '10em' }} onChange={handleSearch}>
                 <input
                     className="search-bar"
                     type="text"

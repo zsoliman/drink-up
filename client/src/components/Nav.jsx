@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { setValue } from '../redux/user'
-import drinkuplogo from '../media/drinkuplogo.PNG'
 import drinkupnav from '../media/drinkupnav.PNG'
 
 const Nav = () => {
@@ -14,6 +13,20 @@ const Nav = () => {
         dispatch(setValue({}))
         window.location.reload();
     }
+
+    // window.onscroll = function () { scrollFunction() };
+
+    const scrollFunction = () => {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("nav").style.padding = "30px 10px";
+            // document.getElementById("logo").style.fontSize = "25px";
+        } else {
+            document.getElementById("nav").style.padding = "80px 10px";
+            // document.getElementById("logo").style.fontSize = "35px";
+        }
+    }
+
+    // scrollFunction()
 
     return (
         <div className="nav">

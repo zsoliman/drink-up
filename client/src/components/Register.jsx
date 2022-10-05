@@ -32,17 +32,31 @@ const Register = () => {
     if (leaving) return <Navigate to='/login' />
 
     return (
-        <div >
-            <h1>Sign up</h1>
+        <div className="sign-up">
+            <h1>Sign up:</h1>
             <div >
-                <form onSubmit={submitNewUser}>
-                    <input name='username' type='username' placeholder="username..." /><br />
+                <form
+                    className='login-form'
+                    onSubmit={submitNewUser}>
 
-                    <input name="password" type='password' placeholder="password..." /><br />
+                    <input
+                        className='login-input'
+                        name='username'
+                        type='username' placeholder="username..." /><br />
 
-                    <input name='email' type='email' placeholder="email..." /><br />
+                    <input className='login-input'
+                        name="password"
+                        type='password' placeholder="password..." /><br />
 
-                    <input type='submit' placeholder="email..." />
+                    <input className='login-input'
+                        name='email'
+                        type='email'
+                        placeholder="email..." /><br />
+
+                    <input
+                        className='login-btn'
+                        type='submit'
+                        placeholder="email..." />
                 </form>
             </div>
         </div>

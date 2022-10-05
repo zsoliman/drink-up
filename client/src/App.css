@@ -1,3 +1,8 @@
+body {
+
+  background-color: #000000;
+}
+
 .App {
   text-align: center;
   font-family: 'Comfortaa', cursive;
@@ -8,31 +13,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 4em;
 
-
+  min-height: 100vh
 }
 
 .card {
-  /* border: solid 2px black;
-  border-radius: 10px;
-  display: flex;
-  height: 70vh;
-  width: auto;
-  padding: 2em;
-  margin: 2em; */
-
   -webkit-perspective: 150rem;
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem;
-  width: 50rem;
-  margin-bottom: 25px;
-
+  height: 25rem;
+  width: 25rem;
+  margin: 30px 15px 45px 15px;
+  color: #2ED1CC
 }
 
 .card__side {
-  height: 52rem;
+  height: 25rem;
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
   position: absolute;
@@ -42,17 +40,18 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 10px;
+
   overflow: hidden;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
 
 .card__side--front {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .card__side--front-1 {
-  background: linear-gradient(-45deg, #f403d1, #64b5f6);
+  /* background: rgba(255, 255, 255, 0.2) */
 }
 
 .card__side--back {
@@ -60,8 +59,18 @@
   transform: rotateY(180deg);
 }
 
-.card__side--back-1 {
+/* .card__side--back-1 {
   background: linear-gradient(-45deg, #64b5f6, #f403d1);
+} */
+
+.card-border {
+  transition: all .1s ease-in-out
+}
+
+.card-border:hover {
+  /* border: solid 1px #ebebeb;
+  border-radius: 10px; */
+  color: #2ED1CC
 }
 
 .card:hover .card__side--front-1 {
@@ -77,9 +86,10 @@
 
 
 .drink-img {
-  height: 50vw;
-  max-height: 70vh;
-  margin-left: 2em;
+  /* height: 50vw;
+  max-height: 70vh; */
+  width: inherit;
+  /* margin-left: 2em; */
 }
 
 .fav {
@@ -87,27 +97,56 @@
   color: #ebebeb;
 }
 
-.home-screen-div {
+.home-component {
   display: flex;
+  flex-direction: column;
+
+}
+
+.home-screen-div {
+  height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 10vh;
+  background-color: #000000;
+  margin-top: 100vh;
+  /* padding-top: 75px; */
+
+}
+
+.home-link-img {
+  position: absolute;
+  height: auto;
+  width: 12em;
+  z-index: -1;
 }
 
 .home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Comfortaa', cursive;
+  text-decoration: none;
   font-size: 2em;
-  background-color: #84b1af;
+  /* background-color: #84b1af9e; */
+  color: #ebebeb;
   border: none;
-  height: 10em;
-  width: 8em;
+  height: 12em;
+  width: 12em;
   cursor: pointer;
   border-radius: 10px;
-  opacity: 95%;
+  /* opacity: 95%; */
+  margin: 10vh 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
 
+
+
 .home-link:hover {
-  opacity: 100%;
+  transform: scale(1.1);
+  /* opacity: 100%; */
 }
 
 .info-sesh {
@@ -130,7 +169,8 @@
 
 .logo {
   height: 5em;
-  margin: 0;
+
+  /* margin: 20px 0 0 0; */
   font-family: 'Kaushan Script', cursive;
 }
 
@@ -145,7 +185,7 @@
   border-radius: 8px;
   margin-left: 50vw;
   transform: translate(-50%);
-  margin-top: 10vh;
+  margin-top: 5vh;
   padding: 100px 0;
   /* background-color: #ebebeb; */
 }
@@ -175,13 +215,19 @@
 }
 
 .nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background-color: #000000;
-  opacity: 85%;
+  opacity: 95%;
   height: 6em;
+  z-index: +1;
+
 }
+
 
 .search-bar {
   margin: 1em;
@@ -196,6 +242,10 @@
   text-align: center;
 }
 
+.sign-up {
+  margin-top: 15em;
+}
+
 .submit {
   height: 3em;
   width: 6em;
@@ -208,12 +258,19 @@
 }
 
 .title {
+  position: absolute;
+  width: 100%;
   animation: fade 2s forwards;
   font-family: 'Kaushan Script', cursive;
   color: #2ED1CC;
-  font-size: 7em;
-  opacity: 85%;
-  /* margin-bottom: 0; */
+  font-size: 20em;
+  opacity: 95%;
+  /* padding: 40px; */
+  /* height: 100%; */
+  justify-content: space-between;
+  /* align-items: center; */
+  align-content: center;
+
 }
 
 .Video {

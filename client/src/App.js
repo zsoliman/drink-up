@@ -74,7 +74,7 @@ function App() {
   };
 
   const getSuggestedDrinks = async () => {
-    let req = await fetch('https://the-cocktail-db.p.rapidapi.com/random.php', options)
+    let req = await fetch('https://the-cocktail-db.p.rapidapi.com/popular.php', options)
     let res = await req.json()
     setSuggestedDrinks(res.drinks)
   }
