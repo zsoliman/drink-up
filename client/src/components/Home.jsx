@@ -1,6 +1,8 @@
 import barman from '../media/barman.mp4';
 import arrow from '../media/arrow.png';
 import strawberryLemonade from '../media/strawberryLemonade.jpg';
+import lemonade from '../media/lemonade.jpg';
+import mojito from '../media/mojito.jpg';
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from 'react';
 
@@ -44,17 +46,25 @@ const Home = () => {
                     className="home-link"
                     to='/drinks'>
 
-                    <img className='home-link-img' src={strawberryLemonade} />
+                    <img className='home-link-img'
+                        src={strawberryLemonade} />
 
                     Thirsty? <br /><br /> Get A Suggestion</Link>
 
 
 
-                <Link to='/search' className="home-link">
+                <Link to='/search'
+                    className="home-link">
+                    <img className='home-link-img'
+                        src={lemonade} />
+
                     Thirsty but Picky? <br /><br /> Search any drink!
                 </Link>
 
                 <Link to='/searchinfo' className="home-link">
+                    <img className='home-link-img'
+                        src={mojito} />
+
                     Curious about your alcohol of choice? <br /><br /> Read about it
                 </Link>
             </div>

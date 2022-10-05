@@ -117,9 +117,10 @@ body {
 
 .home-link-img {
   position: absolute;
-  height: auto;
-  width: 12em;
+  height: 10em;
+  /* width: 15em; */
   z-index: -1;
+  border-radius: 10px;
 }
 
 .home-link {
