@@ -44,6 +44,7 @@ def index
             :strIngredient13,
             :strIngredient14,
             :strIngredient15,
+            :strInstructions,
             :strMeasure1,
             :strMeasure2,
             :strMeasure3,
