@@ -1,8 +1,28 @@
 import barman from '../media/barman.mp4';
+import arrow from '../media/arrow.png';
 import strawberryLemonade from '../media/strawberryLemonade.jpg';
 import { Link } from "react-router-dom";
+import { useRef, useEffect } from 'react';
 
 const Home = () => {
+
+    const arrowRef = useRef()
+    const handleArrowClick = () => {
+        arrowRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            console.log('window.scrollY', window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div >
             <div className='home-component'>
@@ -16,8 +36,9 @@ const Home = () => {
                 </video>
 
                 <h1 className='title'>Drink Up!</h1>
+                <img onClick={handleArrowClick} className='home-arrow' src={arrow} />
             </div>
-            <div className="home-screen-div">
+            <div ref={arrowRef} className="home-screen-div">
 
                 <Link
                     className="home-link"

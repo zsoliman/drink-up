@@ -149,6 +149,20 @@ body {
   /* opacity: 100%; */
 }
 
+.home-arrow {
+  position: absolute;
+  top: 82vh;
+  left: 3vw;
+  height: 7em;
+  width: 7em;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.home-arrow:hover {
+  transform: scale(1.1);
+}
+
 .info-sesh {
   padding: 0 10em;
   letter-spacing: 1.5px;
@@ -216,7 +230,7 @@ body {
 
 .nav {
   position: fixed;
-  box-shadow: 0px 2px 50px #fff;
+  box-shadow: 0px 2px 50px rgba(160, 160, 160, 0.751);
   top: 0;
   width: 100vw;
   display: flex;
