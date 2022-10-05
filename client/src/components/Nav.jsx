@@ -54,8 +54,11 @@ const Nav = () => {
                     <h3
                         className="link"
                         onClick={handleLogout}>
-                        {user.user_name}
-                        <br />Log Out</h3>
+                        <Link className="link" to='/'>
+                            {user.user_name}
+                            <br />Log Out
+                        </Link>
+                    </h3>
 
                     :
 
