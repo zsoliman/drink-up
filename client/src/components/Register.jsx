@@ -37,11 +37,11 @@ const Register = () => {
 
     return (
         <div className="sign-up">
-            <h1>Sign up:</h1>
             <div >
                 <form
                     className='login-form'
                     onSubmit={submitNewUser}>
+                    <h1>Sign up:</h1>
 
                     <input
                         className='login-input'

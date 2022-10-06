@@ -128,6 +128,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
+  /* top: 100%; */
 }
 
 .Footer p {
@@ -287,9 +288,14 @@ body {
 }
 
 .info-sesh {
-  padding: 0 10em;
+  padding: 1em 5em 3em 5em;
+  border-radius: 10px;
   letter-spacing: 1.5px;
   line-height: 30px;
+  margin: 50px 0 50px 10vw;
+  /* margin-left: 10vw; */
+  background-color: #161616e0;
+  width: 70vw;
 }
 
 .link-username {
@@ -327,14 +333,14 @@ body {
   justify-content: center; */
   /* flex-wrap: wrap; */
   /* flex-direction: column; */
-  border: solid black 2px;
+  /* border: solid black 2px; */
   width: 40em;
   border-radius: 8px;
   margin-left: 50vw;
   transform: translate(-50%);
-  margin-top: 5vh;
+  margin-top: 25vh;
   padding: 100px 0;
-  /* background-color: #ebebeb; */
+  background-color: #292929aa;
 }
 
 .login-input {
@@ -391,7 +397,8 @@ body {
 }
 
 .sign-up {
-  margin-top: 15em;
+  /* margin-top: 15em; */
+
 }
 
 .submit {
