@@ -16,7 +16,7 @@ const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
         return (
 
 
-            <div style={{ backgroundColor: '#000000' }}>
+            <div style={{ backgroundColor: '#161616' }}>
                 <h2 className="header">Your Favorites:</h2>
                 <div className="card-container">
                     {

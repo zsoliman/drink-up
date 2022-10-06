@@ -67,8 +67,4 @@ user2 = User.create(user_name: "zsoliman",
     password: "password",
     email: "email@gmail.com")
 
-
-favorite1 = Favorite.create(user_id: 1, recipe_id: 1)
-favorite2 = Favorite.create(user_id: 1, recipe_id: 2)
-
 puts 'done seeding'

@@ -16,7 +16,7 @@ const SearchInfo = ({ ingredients, setSearchTerm }) => {
     if (!ingredients) return <h1>loading</h1>
 
     return (
-        <div style={{ backgroundColor: '#000', height: '100vh' }}>
+        <div style={{ backgroundColor: '#161616', height: '100vh' }}>
             <h2 className="header">Learn more here:</h2>
             <form onChange={handleSearch}>
                 <input

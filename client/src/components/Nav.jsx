@@ -52,10 +52,9 @@ const Nav = () => {
             <div>
                 {user ?
                     <h3
-                        className="link"
-                        onClick={handleLogout}>
-                        <Link className="link" to='/'>
-                            {user.user_name}
+                        className="link-username">
+                        {user.user_name}
+                        <Link className="link" to='/' onClick={handleLogout}>
                             <br />Log Out
                         </Link>
                     </h3>

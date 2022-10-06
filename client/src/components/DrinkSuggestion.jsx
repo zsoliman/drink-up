@@ -8,7 +8,7 @@ const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, delet
     }, [])
 
     return (
-        <div style={{ backgroundColor: '#000000', height: '100vh' }}>
+        <div style={{ backgroundColor: '#161616', height: '100vh' }}>
             <h2 className="header">Suggested Drinks</h2>
             <div className="card-container">
                 {

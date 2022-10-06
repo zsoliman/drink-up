@@ -1,6 +1,5 @@
 body {
-
-  background-color: #000000;
+  background-color: #161616;
 }
 
 .App {
@@ -14,8 +13,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 4em;
-
-  min-height: 100vh
+  min-height: 100vh;
+  /* padding: 0 40px; */
 }
 
 .card {
@@ -23,9 +22,9 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 25rem;
+  height: 30rem;
   width: 25rem;
-  margin: 30px 15px 45px 15px;
+  margin: 30px 45px 45px 45px;
   color: #2ED1CC
 }
 
@@ -118,6 +117,7 @@ body {
   /* margin-left: 2em; */
 }
 
+/* fav and unfav are the like button settings */
 .unfav {
   border-radius: 5px;
   width: 100px;
@@ -138,7 +138,7 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   margin-top: 20px;
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.756);
   color: #ebebeb;
 }
 
@@ -159,7 +159,7 @@ body {
   /* flex-direction: column; */
   align-items: center;
   justify-content: space-evenly;
-  background-color: #000000;
+  background-color: #161616;
   margin-top: 100vh;
   /* padding-top: 75px; */
 
@@ -211,18 +211,60 @@ body {
   opacity: 30%;
 }
 
-.home-arrow {
+/* .home-arrow {
   position: absolute;
   top: 82vh;
-  left: 3vw;
+  left: 50vw;
+  transform: translate(-50%);
   height: 7em;
   width: 7em;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+} */
+
+@keyframes bounce {
+
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0)
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px)
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px)
+  }
+}
+
+.home-arrow {
+  position: absolute;
+  top: 82%;
+  left: 46%;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 
 .home-arrow:hover {
-  transform: scale(1.1);
+  cursor: pointer;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
 }
 
 .info-sesh {
@@ -231,12 +273,21 @@ body {
   line-height: 30px;
 }
 
+.link-username {
+  text-decoration: none;
+  color: #ebebeb;
+  font-size: 30px;
+  /* cursor: pointer; */
+  margin: 0;
+}
+
 .link {
   text-decoration: none;
   color: #ebebeb;
   font-size: 30px;
   cursor: pointer;
   margin: 0;
+  /* padding: 20px 0; */
 }
 
 .link:hover {
@@ -299,7 +350,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #000000;
+  background-color: rgb(20, 20, 20);
   opacity: 95%;
   height: 6em;
   z-index: +1;
@@ -343,10 +394,7 @@ body {
   color: #2ED1CC;
   font-size: 20em;
   opacity: 90%;
-  /* padding: 40px; */
-  /* height: 100%; */
   justify-content: space-between;
-  /* align-items: center; */
   align-content: center;
   text-shadow: 20px 20px 15px #000000;
 

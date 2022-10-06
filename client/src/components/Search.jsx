@@ -34,7 +34,7 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
     if (!drinks) return <h1>loading</h1>
 
     return (
-        <div style={{ backgroundColor: '#000000' }}>
+        <div style={{ backgroundColor: '#161616' }}>
             <h2 className="header">Find Your Drink:</h2>
             <form
                 onChange={handleSearch}
