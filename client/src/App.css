@@ -120,15 +120,19 @@ body {
 .Footer {
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
+  justify-content: space-evenly;
   gap: 50px;
+  width: 90%;
   margin-top: 20px;
   position: absolute;
-
   left: 50%;
   transform: translate(-50%);
-  /* bottom: 0; */
-  /* height: 50px; */
+  cursor: pointer;
+}
+
+.Footer p {
+  /* min-width: 100px; */
+  white-space: no-wrap;
 }
 
 /* fav and unfav are the like button settings */

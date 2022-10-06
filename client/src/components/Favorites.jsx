@@ -11,6 +11,7 @@ import Footer from "./Footer"
 const Favorites = ({ favoritesList, addToFavorites, deleteFavorite, fetchSession }) => {
     const user = useSelector((state) => state.user.value)
 
+    console.log('user', user)
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
