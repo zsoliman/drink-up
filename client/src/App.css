@@ -61,6 +61,7 @@ body {
 }
 
 .card__side--back {
+  background-color: #161616e0;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
@@ -127,12 +128,12 @@ body {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  cursor: pointer;
 }
 
 .Footer p {
   /* min-width: 100px; */
   white-space: no-wrap;
+  cursor: pointer;
 }
 
 /* fav and unfav are the like button settings */
