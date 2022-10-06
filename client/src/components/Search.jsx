@@ -72,6 +72,7 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
                                 favoritesList={favoritesList}
                                 addToFavorites={addToFavorites}
                                 deleteFavorite={deleteFavorite}
+                                fetchSession={fetchSession}
                             />
                         )
                     })

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from 'react-redux'
 
-const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => {
+const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite, fetchSession }) => {
     const user = useSelector((state) => state.user.value)
 
     // console.log('drink', drink)
@@ -87,19 +87,35 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
     }
 
     const handleClick = async () => {
+        // fetchSession()
 
-        const isFound = user.recipes.some(el => {
-            if (el.id === drink.id) {
-                return true
-            }
+        console.log('start')
+        console.log(user)
+        console.log("user.favorites is", user.favorites)
+
+        // const isFound = user.favorites
+        // .some(el => {
+        // console.log('el', el, 'drink', drink)
+        // return el.recipe.id === drink.id
+        // if (el.id === drink.id) {
+        // return true
+        // }
+        // })
+
+        const checkFav = user.favorites.find((fav) => {
+            return fav.recipe.id === drink.id
         })
 
-        if (isFound) {
+        console.log("checkFav is", checkFav)
+
+        if (checkFav) {
+            console.log('drink found, deleting favorites')
             deleteFavorite(drink)
         } else {
+            console.log('drink not found, adding to favorites')
             addToFavorites(await addToRecipes())
         }
-
+        fetchSession()
         setIsFavorite(current => !current);
     }
 
@@ -144,7 +160,7 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
 
 
             </div>
-        </div>
+        </div >
     )
 }
 

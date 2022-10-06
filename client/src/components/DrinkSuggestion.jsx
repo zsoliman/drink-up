@@ -4,7 +4,7 @@ import backgroundLights from '../media/backgroundLights.mp4'
 import Footer from "./Footer";
 
 
-const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, deleteFavorite }) => {
+const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, deleteFavorite, fetchSession }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -33,6 +33,8 @@ const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, delet
                                 favoritesList={favoritesList}
                                 addToFavorites={addToFavorites}
                                 deleteFavorite={deleteFavorite}
+                                fetchSession={fetchSession}
+
                             />
 
                         )

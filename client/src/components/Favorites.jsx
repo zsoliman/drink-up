@@ -8,7 +8,7 @@ import backgroundLights from '../media/backgroundLights.mp4'
 import Footer from "./Footer"
 
 
-const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
+const Favorites = ({ favoritesList, addToFavorites, deleteFavorite, fetchSession }) => {
     const user = useSelector((state) => state.user.value)
 
     useEffect(() => {
@@ -46,6 +46,7 @@ const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
                                     drink={drink.recipe}
                                     addToFavorites={addToFavorites}
                                     deleteFavorite={deleteFavorite}
+                                    fetchSession={fetchSession}
                                 />
                             )
                         })

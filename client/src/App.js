@@ -135,6 +135,8 @@ function App() {
               favoritesList={favoritesList}
               addToFavorites={addToFavorites}
               deleteFavorite={deleteFavorite}
+              fetchSession={fetchSession}
+
             />} ></Route>
 
           <Route path='/searchinfo'
@@ -152,6 +154,7 @@ function App() {
               favoritesList={favoritesList}
               addToFavorites={addToFavorites}
               deleteFavorite={deleteFavorite}
+              fetchSession={fetchSession}
             />} ></Route>
 
           <Route path='/login'
@@ -163,6 +166,8 @@ function App() {
               favoritesList={favoritesList}
               addToFavorites={addToFavorites}
               deleteFavorite={deleteFavorite}
+              fetchSession={fetchSession}
+
             />} ></Route>
 
           <Route path='/register'

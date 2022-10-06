@@ -35,7 +35,7 @@ const Login = () => {
         let res = await req.json()
 
         if (req.ok) {
-
+            console.log(res)
             dispatch(setValue(res))
             setError('')
             setLeaving(true)

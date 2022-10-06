@@ -22,6 +22,8 @@ def index
 
     end
 
+    
+
     private
 
     def recipe_params
