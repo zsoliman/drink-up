@@ -2,6 +2,10 @@ import { useState } from "react"
 import { useEffect } from "react"
 import DrinkCard from "./DrinkCard"
 import { useSelector } from 'react-redux'
+import wine from '../media/wine.jpg'
+import beer from '../media/beer.jpg'
+import backgroundLights from '../media/backgroundLights.mp4'
+import Footer from "./Footer"
 
 
 const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
@@ -16,7 +20,19 @@ const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
         return (
 
 
-            <div style={{ backgroundColor: '#161616' }}>
+            <div
+            // style={{ backgroundColor: '#161616' }}
+            >
+                <video
+                    className='Video'
+                    autoPlay
+                    loop
+                    muted
+
+                >
+                    <source src={backgroundLights} type='video/mp4' />
+                </video>
+
                 <h2 className="header">Your Favorites:</h2>
                 <div className="card-container">
                     {
@@ -35,6 +51,7 @@ const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
                         })
                     }
                 </div>
+                <Footer />
             </div>
         )
     } else {

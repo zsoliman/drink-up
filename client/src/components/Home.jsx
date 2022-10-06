@@ -5,6 +5,7 @@ import lemonade from '../media/lemonade.jpg';
 import mojito from '../media/mojito.jpg';
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from 'react';
+import Footer from './Footer';
 
 const Home = () => {
 
@@ -33,7 +34,7 @@ const Home = () => {
         <div >
             <div className='home-component'>
                 <video
-                    className='Video'
+                    className='VideoHome'
                     autoPlay
                     loop
                     muted
@@ -75,9 +76,7 @@ const Home = () => {
                     Want to Learn Something? <br /><br /> Read about any drink
                 </Link>
             </div>
-            <div>
-                <p> Zachary Soliman ⓒ 2022 </p>
-            </div>
+            <Footer />
         </div>
     )
 }

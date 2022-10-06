@@ -2,6 +2,9 @@ import { useEffect } from "react"
 import DrinkCard from "./DrinkCard"
 import { useSelector, useDispatch } from 'react-redux'
 import { setValue } from '../redux/user'
+import backgroundLights from '../media/backgroundLights.mp4'
+import Footer from "./Footer"
+
 
 const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFavorite }) => {
 
@@ -34,7 +37,18 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
     if (!drinks) return <h1>loading</h1>
 
     return (
-        <div style={{ backgroundColor: '#161616' }}>
+
+        <div>
+            <video
+                className='Video'
+                autoPlay
+                loop
+                muted
+
+            >
+                <source src={backgroundLights} type='video/mp4' />
+            </video>
+
             <h2 className="header">Find Your Drink:</h2>
             <form
                 onChange={handleSearch}
@@ -64,6 +78,7 @@ const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFa
                 }
 
             </div>
+            <Footer />
         </div >
     )
 }

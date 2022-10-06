@@ -117,6 +117,18 @@ body {
   /* margin-left: 2em; */
 }
 
+.Footer {
+  margin-top: 20px;
+  position: absolute;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: space-evenly; */
+  left: 50%;
+  transform: translate(-50%);
+  /* bottom: 0; */
+  /* height: 50px; */
+}
+
 /* fav and unfav are the like button settings */
 .unfav {
   border-radius: 5px;
@@ -154,13 +166,13 @@ body {
 }
 
 .home-screen-div {
-  height: 100vh;
+  height: 65vh;
   display: flex;
   /* flex-direction: column; */
   align-items: center;
   justify-content: space-evenly;
   background-color: #161616;
-  margin-top: 100vh;
+  margin-top: 110vh;
   /* padding-top: 75px; */
 
 }
@@ -400,7 +412,7 @@ body {
 
 }
 
-.Video {
+.VideoHome {
   animation: fade .3s ease-in;
   position: absolute;
   width: 100%;
@@ -410,6 +422,20 @@ body {
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: -1;
+}
+
+.Video {
+  /* animation: fade .3s ease-in; */
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-repeat: repeat;
+
 }
 
 @keyframes fade {

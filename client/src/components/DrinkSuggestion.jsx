@@ -1,5 +1,8 @@
 import DrinkCard from "./DrinkCard";
 import { useEffect } from "react";
+import backgroundLights from '../media/backgroundLights.mp4'
+import Footer from "./Footer";
+
 
 const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, deleteFavorite }) => {
 
@@ -8,8 +11,17 @@ const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, delet
     }, [])
 
     return (
-        <div style={{ backgroundColor: '#161616', height: '100vh' }}>
-            <h2 className="header">Suggested Drinks</h2>
+        <div >
+            <video
+                className='Video'
+                autoPlay
+                loop
+                muted
+
+            >
+                <source src={backgroundLights} type='video/mp4' />
+            </video>
+            <h2 className="header">Drink Up these Signature Cocktails</h2>
             <div className="card-container">
                 {
                     suggestedDrinks.map((drink) => {
@@ -28,6 +40,7 @@ const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, delet
                 }
 
             </div>
+            <Footer />
         </div>
     )
 }
