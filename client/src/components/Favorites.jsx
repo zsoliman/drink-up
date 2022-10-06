@@ -7,7 +7,9 @@ import { useSelector } from 'react-redux'
 const Favorites = ({ favoritesList, addToFavorites, deleteFavorite }) => {
     const user = useSelector((state) => state.user.value)
 
-    console.log(favoritesList)
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     if (favoritesList != []) {
 

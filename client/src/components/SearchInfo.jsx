@@ -1,5 +1,9 @@
+import { useEffect } from "react"
 const SearchInfo = ({ ingredients, setSearchTerm }) => {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const handleSearch = (e) => {
         e.preventDefault()

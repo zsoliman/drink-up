@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-skip_before_action :authorize, only: [:create]
+skip_before_action :authorize, only: [:index, :show, :create]
 
 def index
         recipes = Recipe.all
@@ -44,7 +44,6 @@ def index
             :strIngredient13,
             :strIngredient14,
             :strIngredient15,
-            :strInstructions,
             :strMeasure1,
             :strMeasure2,
             :strMeasure3,

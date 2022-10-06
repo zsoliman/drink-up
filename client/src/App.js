@@ -56,14 +56,6 @@ function App() {
     document.getElementById(drink.strDrink).remove()
   }
 
-
-
-  // useEffect(() => {
-
-  // }, [])
-
-
-
   // 'options' provided by[]
   const options = {
     method: 'GET',

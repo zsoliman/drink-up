@@ -5,6 +5,10 @@ import { setValue } from '../redux/user'
 
 const Search = ({ setSearchTerm, drinks, favoritesList, addToFavorites, deleteFavorite }) => {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const user = useSelector((state) => state.user.value)
     const dispatch = useDispatch();
 

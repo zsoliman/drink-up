@@ -35,6 +35,9 @@ const DrinkCard = ({ drink, favoritesList, addToFavorites, deleteFavorite }) => 
 
 
     const addToRecipes = async () => {
+
+
+
         let req = await fetch(`http://localhost:3000/recipes/${user.id}`, {
             method: 'POST',
             headers: {

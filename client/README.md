@@ -36,8 +36,11 @@ list.php?c=list
 to do:
 - [DONE]change the title from REACT APP
 - [DONE]create a favicon(if theres time)
-- add visual hiegherarchy
-- add card flip to recipes on click
-
+- [DONE]add visual hiegherarchy
+- [DONE]add card flip to recipes on click
 - [DONE]make nav bar smaller
 - [DONE]move options closer to the logo
+
+Final Errors:
+- cannot favorite a drink from more than one user
+- moving to other pages holds the scroll location

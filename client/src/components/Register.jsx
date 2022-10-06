@@ -1,8 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Navigate } from "react-router-dom"
 
 
 const Register = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const [leaving, setLeaving] = useState(false)
 

@@ -1,6 +1,11 @@
 import DrinkCard from "./DrinkCard";
+import { useEffect } from "react";
 
 const DrinkSuggestion = ({ suggestedDrinks, favoritesList, addToFavorites, deleteFavorite }) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div style={{ backgroundColor: '#000000', height: '100vh' }}>

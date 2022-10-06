@@ -8,6 +8,10 @@ import { useRef, useEffect } from 'react';
 
 const Home = () => {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const arrowRef = useRef()
     const handleArrowClick = () => {
         arrowRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -38,9 +42,12 @@ const Home = () => {
                 </video>
 
                 <h1 className='title'>Drink Up!</h1>
+
                 <img onClick={handleArrowClick} className='home-arrow' src={arrow} />
+
+
             </div>
-            <div ref={arrowRef} className="home-screen-div">
+            <div id='home-screen-div' ref={arrowRef} className="home-screen-div">
 
                 <Link
                     className="home-link"
